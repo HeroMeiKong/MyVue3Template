@@ -22,6 +22,7 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
 开发：Vue3 + TypeScript + Vite
 功能：
 
+- 增量打包+构建：[Turbo](https://github.com/vercel/turbo)：待完善
 - UI: 自定义配置
 - 模拟数据：[MockJS](http://mockjs.com/)
 - 国际化：[vue-i18n](https://github.com/kazupon/vue-i18n)

@@ -6,7 +6,32 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "turbo run lint"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "{!(package)*.json,*.code-snippets,.!(browserslist)*rc}": [
+      "prettier --write--parser json"
+    ],
+    "package.json": [
+      "prettier --write"
+    ],
+    "*.vue": [
+      "prettier --write",
+      "eslint --fix",
+      "stylelint --fix"
+    ],
+    "*.{scss,less,styl,html}": [
+      "prettier --write",
+      "stylelint --fix"
+    ],
+    "*.md": [
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "lodash-es": "^4.17.21",
@@ -21,9 +46,11 @@
     "@vitejs/plugin-vue-jsx": "^3.0.1",
     "dayjs": "^1.11.7",
     "dotenv": "^16.0.3",
+    "lint-staged": "^13.2.1",
     "mockjs": "^1.1.0",
     "rollup": "^3.20.2",
     "sass": "^1.61.0",
+    "turbo": "^1.8.8",
     "typescript": "^5.0.3",
     "unplugin-vue-components": "^0.24.1",
     "vite": "^4.2.1",
