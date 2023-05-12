@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview",
-    "lint": "turbo run lint"
+    "preview": "vite preview"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
@@ -34,15 +33,20 @@
     ]
   },
   "dependencies": {
-    "ant-design-vue": "^3.2.19",
+    "@ant-design/icons-vue": "^6.1.0",
+    "@unocss/reset": "^0.51.12",
+    "@vueuse/core": "^10.1.2",
+    "ant-design-vue": "4.0.0-beta.4",
     "lodash-es": "^4.17.21",
     "pinia": "^2.0.33",
     "vue": "^3.2.47",
     "vue-i18n": "^9.2.2"
   },
   "devDependencies": {
+    "@iconify-json/mdi": "^1.1.51",
     "@types/lodash-es": "^4.17.7",
     "@types/node": "^18.15.11",
+    "@unocss/preset-rem-to-px": "^0.51.12",
     "@vitejs/plugin-vue": "^4.1.0",
     "@vitejs/plugin-vue-jsx": "^3.0.1",
     "dayjs": "^1.11.7",
@@ -52,8 +56,10 @@
     "mockjs": "^1.1.0",
     "rollup": "^3.20.2",
     "sass": "^1.61.0",
-    "turbo": "^1.8.8",
     "typescript": "^5.0.3",
+    "unocss": "^0.51.12",
+    "unplugin-auto-import": "^0.15.3",
+    "unplugin-icons": "^0.16.1",
     "unplugin-vue-components": "^0.24.1",
     "vite": "^4.2.1",
     "vite-plugin-mock": "^2.9.6",

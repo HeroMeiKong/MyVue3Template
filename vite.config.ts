@@ -5,11 +5,10 @@ import pkg from './package.json';
 import { defineConfig, loadEnv } from 'vite';
 
 import { createProxy } from './build/vite/proxy';
-import { createVitePlugins } from './build/vite/plugin';
+import createVitePlugins from './build/vite/plugins';
 import { wrapperEnv } from './build/utils';
 
 const pathTypes = path.resolve(__dirname, 'types')
-console.log("pathSrc: ", pathTypes)
 
 const { dependencies, devDependencies, name, version } = pkg;
 const __APP_INFO__ = {
@@ -62,6 +61,7 @@ export default defineConfig(({ command, mode }) => {
     plugins: createVitePlugins(viteEnv, isBuild, pathTypes),
     resolve: {
       alias: {
+        '~': path.resolve(__dirname),
         '@': path.resolve(__dirname, 'src'),
         '#': pathTypes
       }
