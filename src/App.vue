@@ -8,7 +8,7 @@
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
-  <HelloWorl  msg="Vite + Vue" />
+  <Text />
 </template>
 
 <style scoped>
