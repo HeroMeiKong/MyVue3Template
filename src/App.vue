@@ -1,16 +1,21 @@
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/icons/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
-  <Text />
+  <AConfigProvider :locale="getAntdLocale">
+    <div>
+      <a href="https://vitejs.dev" target="_blank">
+        <img src="/vite.svg" class="logo" alt="Vite logo" />
+      </a>
+      <a href="https://vuejs.org/" target="_blank">
+        <img src="./assets/icons/vue.svg" class="logo vue" alt="Vue logo" />
+      </a>
+    </div>
+    <Test />
+  </AConfigProvider>
 </template>
+<script lang="ts" setup>
+import { useLocale } from '@/locales/useLocale';
 
+const { getAntdLocale } = useLocale();
+</script>
 <style scoped>
 .logo {
   height: 6em;

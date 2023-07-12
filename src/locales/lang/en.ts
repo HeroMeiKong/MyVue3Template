@@ -1,10 +1,31 @@
-import { genMessage } from '../helper';
+import antdLocale from 'ant-design-vue/es/locale/en_US';
 
-const modules = import.meta.glob('./en/**/*.ts');
+const dict = {
+  common: {
+    okText: 'OK',
+    closeText: 'Close',
+    cancelText: 'Cancel',
+    loadingText: 'Loading...',
+    saveText: 'Save',
+    delText: 'Delete',
+    resetText: 'Reset',
+    searchText: 'Search',
+    queryText: 'Search',
+
+    inputText: 'Please enter',
+    chooseText: 'Please choose',
+
+    redo: 'Refresh',
+    back: 'Back',
+
+    light: 'Light',
+    dark: 'Dark',
+  },
+};
+
 export default {
   message: {
-    ...genMessage(modules, 'en')
-  },
-  dateLocale: null,
-  dateLocaleName: 'en'
-};
+    ...dict,
+    antdLocale
+  }
+}

@@ -17,9 +17,12 @@
     "build/**/*d.ts",
     "mock/**/*.ts",
     "package.json",
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
     "types/**/*.ts",
     "types/**/*.d.ts",
     "vite.config.ts",
-    "build/IIFE.js"
   ]
 }

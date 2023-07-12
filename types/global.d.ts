@@ -22,6 +22,7 @@ declare global {
   type PropType<T> = VuePropType<T>;
   type VueNode = VNodeChild | JSX.Element;
 
+  type Nullable<T> = T | null;
   type Recordable<T = any> = Record<string, T>;
 
   // Async

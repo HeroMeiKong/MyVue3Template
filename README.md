@@ -23,7 +23,7 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
 功能：
 
 - 增量打包 + 构建：[Turbo](https://github.com/vercel/turbo)：待完善
-- `UI`: [AntDesignVue](https://next.antdv.com/components/overview-cn) progress（定制主题、国际化）
+- `UI`: [AntDesignVue](https://next.antdv.com/components/overview-cn) progress（定制主题）、完成国际化
 - 模拟数据：[MockJS](http://mockjs.com/)：待完善
 - 国际化：[vue-i18n](https://github.com/kazupon/vue-i18n)：待完善
 - `Vue3-JSX`：[@vitejs/plugin-vue-jsx](https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue-jsx)
@@ -33,6 +33,8 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
 - 更多的 `Icon`：`@iconify/json`（全量）、`@iconify-json/mdi（Material Design Icons）`等，[查询所有 Icon](https://icones.js.org/)
 - `Vueuse`：待完善
 - `pinia`：待完善
+- 加解密 finish
+- i18n-ally 兼容
 
 结构：
 
@@ -86,6 +88,21 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
 - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)：更好的支持 `Markdown`
 - [Markdown PDF](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf)：`Markdown => PDF`
 - [Markdown Preview Enhanced](https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced)：`Markdown` 预览增强
+- [Mithril Emmet](https://marketplace.visualstudio.com/items?itemName=FallenMax.mithril-emmet)：`HTML` 标签快捷操作
+
+  ```json
+  // setting.json
+  {
+    "editor.quickSuggestions": {
+      "other": "on",
+      "comments": "on",
+      "strings": "on"
+    },
+    "emmet.showSuggestionsAsSnippets": true,
+    "emmet.triggerExpansionOnTab": true
+  }
+  ```
+
 - [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)：`Markdown linting` 和样式检查
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)：自动完成文件名
 - [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)：代码美化/格式化程序
