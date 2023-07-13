@@ -25,14 +25,15 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
 - 增量打包 + 构建：[Turbo](https://github.com/vercel/turbo)：待完善
 - `UI`: [AntDesignVue](https://next.antdv.com/components/overview-cn) progress（定制主题）、完成国际化
 - 模拟数据：[MockJS](http://mockjs.com/)：待完善
-- 国际化：[vue-i18n](https://github.com/kazupon/vue-i18n)：待完善
+- 国际化：[vue-i18n](https://github.com/kazupon/vue-i18n)：Done
 - `Vue3-JSX`：[@vitejs/plugin-vue-jsx](https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue-jsx)
 - 改进 `Git Hooks`：[husky](https://github.com/typicode/husky)
-- 自动引入：`unplugin-auto-import`、`unplugin-icons`、`unplugin-vue-components`
-- 更好的使用 `CSS`：`Unocss`：[重新构想原子化 CSS](https://antfu.me/posts/reimagine-atomic-css-zh)
-- 更多的 `Icon`：`@iconify/json`（全量）、`@iconify-json/mdi（Material Design Icons）`等，[查询所有 Icon](https://icones.js.org/)
+- 自动引入：`unplugin-auto-import`、`unplugin-icons`、`unplugin-vue-components` Done
+- 更好的使用 `CSS`：`Unocss`：[重新构想原子化 CSS](https://antfu.me/posts/reimagine-atomic-css-zh) Done
+- 更多的 `Icon`：`@iconify/json`（全量）、`@iconify-json/mdi（Material Design Icons）`等，[查询所有 Icon](https://icones.js.org/) Done
 - `Vueuse`：待完善
 - `pinia`：待完善
+- 单元测试：待完善
 - 加解密 finish
 - i18n-ally 兼容
 

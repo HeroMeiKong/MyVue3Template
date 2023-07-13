@@ -1,5 +1,8 @@
 import App from './App.vue'
 import { setupI18n } from '@/locales/setupI18n';
+import { setupErrorHandle } from '@/logics/error-handle';
+import { initAppConfigStore } from '@/logics/initAppConfig';
+import { setupStore } from '@/store';
 
 import './global.css'
 import '@unocss/reset/normalize.css'
@@ -10,11 +13,11 @@ async function bootstrap() {
 
   // Configure store
   // 配置 store
-  // setupStore(app);
+  setupStore(app);
 
   // Initialize internal system configuration
   // 初始化内部系统配置
-  // initAppConfigStore();
+  initAppConfigStore();
 
   // Register global components
   // 注册全局组件
@@ -40,7 +43,7 @@ async function bootstrap() {
 
   // Configure global error handling
   // 配置全局错误处理
-  // setupErrorHandle(app);
+  setupErrorHandle(app);
 
   // https://next.router.vuejs.org/api/#isready
   // await router.isReady();

@@ -1,4 +1,3 @@
-import { defineStore } from 'pinia';
 import { store } from '@/store';
 
 import { createLocalStorage } from '@/utils/cache';

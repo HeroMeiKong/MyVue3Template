@@ -1,6 +1,11 @@
-import type { Langs } from '@/enums/common';
+import { LangsEnum } from '@/enums/commonEnum';
+import { ThemesEnum } from '@/enums/settingsEnum';
 
-export type LangType = keyof typeof Langs;
+export type LangType = keyof typeof LangsEnum;
+
+export type ThemesType = keyof typeof ThemesEnum;
+
+export type LowercaseThemesType = Lowercase<ThemesType>;
 
 export interface GlobEnvConfig {
   // Site title
@@ -28,4 +33,19 @@ export interface LocaleSetting {
 
 export interface LocaleState {
   localInfo: LocaleSetting;
+}
+
+export interface ProjectConfig {
+  // Use error-handler-plugin
+  useErrorHandle: boolean;
+}
+
+export interface Settings {
+  theme: LowercaseThemesType;
+}
+
+export interface ThemeSetting {
+  custom: any;
+  dark: any;
+  light: any;
 }
