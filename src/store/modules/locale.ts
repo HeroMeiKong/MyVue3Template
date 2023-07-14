@@ -10,8 +10,9 @@ const ls = createLocalStorage();
 
 const lsLocaleSetting = (ls.get(LOCALE_KEY) || localeSetting) as LocaleSetting;
 
+// export const useLocaleStore = defineStore('app-locale', {
 export const useLocaleStore = defineStore({
-  id: 'app-locale',
+  id: 'app-locale', // 可隐藏使用上面那种
   state: (): LocaleState => ({
     localInfo: lsLocaleSetting,
   }),
@@ -39,6 +40,7 @@ export const useLocaleStore = defineStore({
       });
     },
   },
+  persist: true, // 持久化 Store
 });
 
 export function useLocaleStoreWithOut() {

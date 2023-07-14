@@ -63,6 +63,7 @@ export const useErrorLogStore = defineStore({
       this.addErrorLogInfo(errInfo as ErrorLogInfo);
     },
   },
+  persist: true,
 });
 
 // Need to be used outside the setup

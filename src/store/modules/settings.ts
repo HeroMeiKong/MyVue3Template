@@ -29,6 +29,7 @@ export const useThemeStore = defineStore({
       this.setTheme(theme ?? themeSetting[ThemesEnum.LIGHT]);
     },
   },
+  persist: true,
 });
 
 export function useThemeStoreWithOut() {
