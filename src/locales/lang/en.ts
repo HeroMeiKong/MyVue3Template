@@ -2,6 +2,8 @@ import antdLocale from 'ant-design-vue/es/locale/en_US';
 
 const dict = {
   common: {
+    networkException: 'network anomaly',
+    networkExceptionMsg: 'Please check if your network connection is normal! The network is abnormal',
     week: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
   },
   condition: {},
@@ -9,11 +11,15 @@ const dict = {
   status: {
     addSuccess: 'Successfully Added',
     modifySuccess: 'Successfully Modified',
+    operationSuccess: 'Operation Success',
+    operationFailed: 'Operation Failed',
     processing: 'Processing',
     uploadFail: 'Upload Failed',
   },
   tip: {
-    confirmExitSystem: 'Are you sure to exit the system?'
+    confirmExitSystem: 'Are you sure to exit the system?',
+    errorTip: 'Error Tip',
+    successTip: 'Success Tip',
   },
   // 独特的，中英差别，例如复数
   unique: {
@@ -101,6 +107,22 @@ const dict = {
 
 export default {
   message: {
+    api: {
+      apiRequestFailed: 'The interface request failed, please try again later!',
+      apiTimeoutMessage: 'The interface request timed out, please refresh the page and try again!',
+      errMsg401: 'The user does not have permission (token, user name, password error)!',
+      errMsg403: 'The user is authorized, but access is forbidden!',
+      errMsg404: 'Network request error, the resource was not found!',
+      errMsg405: 'Network request error, request method not allowed!',
+      errMsg408: 'Network request timed out!',
+      errMsg500: 'Server error, please contact the administrator!',
+      errMsg501: 'The network is not implemented!',
+      errMsg502: 'Network Error!',
+      errMsg503: 'The service is unavailable, the server is temporarily overloaded or maintained!',
+      errMsg504: 'Network timeout!',
+      errMsg505: 'The http version does not support the request!',
+      timeoutMessage: 'Login timed out, please log in again!',
+    },
     router: {
       errorLog: 'Error Log',
       errorLogList: 'Error Log List',

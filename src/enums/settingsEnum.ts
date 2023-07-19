@@ -24,6 +24,11 @@ export enum RouterTransitionEnum {
   FADE_SCALE = 'fade-scale',
 }
 
+export enum SessionTimeoutProcessingEnum {
+  ROUTE_JUMP,
+  PAGE_COVERAGE,
+}
+
 export enum ThemesEnum {
   CUSTOM = 'custom',
   DARK = 'dark',

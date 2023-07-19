@@ -3,18 +3,16 @@ import type { Router, RouteLocationNormalized } from 'vue-router';
 import { Modal, notification } from 'ant-design-vue';
 import nProgress from 'nprogress';
 
+import { useTransitionSetting } from '@/hooks/setting/useTransitionSetting';
 import { setRouteChange } from '@/logics/mitt/routeChange';
 import projectSetting from '@/settings/projectSetting';
 import { useAppStoreWithOut } from '@/store/modules/app';
 import { useUserStoreWithOut } from '@/store/modules/user';
-import { useTransitionSetting } from '@/hooks/setting/useTransitionSetting';
+import { AxiosCanceler } from '@/utils/axios/axiosCancel';
 import { warn } from '@/utils/log';
 import { createParamMenuGuard } from './paramMenuGuard';
 import { createPermissionGuard } from './permissionGuard';
 import { createStateGuard } from './stateGuard';
-
-import { AxiosCanceler } from '@/utils/http/axios/axiosCancel';
-
 
 // Don't change the order of creation
 export function setupRouterGuard(router: Router) {
