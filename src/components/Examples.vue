@@ -2,7 +2,7 @@
   <a-button type='primary' @click="changeLang">Primary Button</a-button>
   <a-button>Button</a-button>
   <div class='i-mdi:ab-testing'></div>
-  <div>{{ t('common.searchText') }}</div>
+  <div>{{ t('word.confirm') }}</div>
   <a-time-range-picker />
   <a-pagination v-model:current="current" :total="500" />
   <h2 @click="changeTheme">

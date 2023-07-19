@@ -1,5 +1,6 @@
+import { CacheTypeEnum } from '@/enums/cacheEnum';
 import { LangsEnum } from '@/enums/commonEnum';
-import { ThemesEnum } from '@/enums/settingsEnum';
+import { RouterTransitionEnum, ThemesEnum } from '@/enums/settingsEnum';
 
 export type LangType = keyof typeof LangsEnum;
 
@@ -35,7 +36,24 @@ export interface LocaleState {
   localInfo: LocaleSetting;
 }
 
+export interface TransitionSetting {
+  //  Whether to open the page switching animation
+  enable: boolean;
+  // Route basic switching animation
+  basicTransition: RouterTransitionEnum;
+  // Whether to open page switching loading
+  openPageLoading: boolean;
+  // Whether to open the top progress bar
+  openNProgress: boolean;
+}
+
 export interface ProjectConfig {
+  // Storage location of permission related information
+  permissionCacheType: CacheTypeEnum;
+  // Permission mode
+  permissionMode: PermissionModeEnum;
+  // Animation configuration
+  transitionSetting: TransitionSetting;
   // Use error-handler-plugin
   useErrorHandle: boolean;
 }

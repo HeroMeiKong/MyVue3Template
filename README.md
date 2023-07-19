@@ -19,7 +19,7 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
 
 ## 配置
 
-开发：`Vue3 + TypeScript + Vite + AntDesignVue`
+开发：`Vue3 + TypeScript + Vite + AntDesignVue + Pinia + Vue-Router`
 功能：
 
 - 增量打包 + 构建：[Turbo](https://github.com/vercel/turbo)：待完善
@@ -33,6 +33,8 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
 - 更多的 `Icon`：`@iconify/json`（全量）、`@iconify-json/mdi（Material Design Icons）`等，[查询所有 Icon](https://icones.js.org/) Done
 - `Vueuse`：待完善
 - `pinia`：Done
+- `Vue-Router`：In Progress
+- `Axios`: In Progress
 - `Lint`: 待完善
 - 单元测试：待完善
 - 加解密 Done

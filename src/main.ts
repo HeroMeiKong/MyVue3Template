@@ -2,6 +2,8 @@ import App from './App.vue'
 import { setupI18n } from '@/locales/setupI18n';
 import { setupErrorHandle } from '@/logics/error-handle';
 import { initAppConfigStore } from '@/logics/initAppConfig';
+import { router, setupRouter } from '@/router';
+import { setupRouterGuard } from '@/router/guard';
 import { setupStore } from '@/store';
 
 import './global.css'
@@ -31,11 +33,11 @@ async function bootstrap() {
 
   // Configure routing
   // 配置路由
-  // setupRouter(app);
+  setupRouter(app);
 
   // router-guard
   // 路由守卫
-  // setupRouterGuard(router);
+  setupRouterGuard(router);
 
   // Register global directive
   // 注册全局指令

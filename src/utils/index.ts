@@ -1,5 +1,5 @@
-// import type { RouteLocationNormalized, RouteRecordNormalized } from 'vue-router';
 import type { App } from 'vue';
+import type { RouteLocationNormalized, RouteRecordNormalized } from 'vue-router';
 import type { CustomComponent, WithInstall } from '#/custom';
 
 import { unref } from 'vue';
@@ -80,20 +80,20 @@ export function getDynamicProps<T extends Record<string, unknown>, U>(props: T):
   return ret as Partial<U>;
 }
 
-// export function getRawRoute(route: RouteLocationNormalized): RouteLocationNormalized {
-//   if (!route) return route;
-//   const { matched, ...opt } = route;
-//   return {
-//     ...opt,
-//     matched: (matched
-//       ? matched.map((item) => ({
-//           meta: item.meta,
-//           name: item.name,
-//           path: item.path,
-//         }))
-//       : undefined) as RouteRecordNormalized[],
-//   };
-// }
+export function getRawRoute(route: RouteLocationNormalized): RouteLocationNormalized {
+  if (!route) return route;
+  const { matched, ...opt } = route;
+  return {
+    ...opt,
+    matched: (matched
+      ? matched.map((item) => ({
+          meta: item.meta,
+          name: item.name,
+          path: item.path,
+        }))
+      : undefined) as RouteRecordNormalized[],
+  };
+}
 
 export const withInstall = <T extends CustomComponent>(component: T, alias?: string) => {
   (component as Record<string, unknown>).install = (app: App) => {
