@@ -40,20 +40,21 @@ declare global {
 
   // Vite
   interface ViteEnv {
-    VITE_PORT: number;
-    VITE_USE_MOCK: boolean;
-    VITE_USE_PWA: boolean;
-    VITE_PUBLIC_PATH: string;
-    VITE_PROXY: [string, string][];
-    VITE_GLOBAL_APP_TITLE: string;
-    VITE_GLOBAL_APP_SHORT_NAME: string;
-    VITE_USE_CDN: boolean;
-    VITE_DROP_CONSOLE: boolean;
     VITE_BUILD_COMPRESS: 'gzip' | 'brotli' | 'none';
     VITE_BUILD_COMPRESS_DELETE_ORIGIN_FILE: boolean;
+    VITE_DROP_CONSOLE: boolean;
+    VITE_GLOBAL_API_URL: string;
+    VITE_GLOBAL_API_URL_PREFIX: string | undefined;
+    VITE_GLOBAL_APP_SHORT_NAME: string;
+    VITE_GLOBAL_APP_TITLE: string;
+    VITE_GLOBAL_UPLOAD_URL: string;
     VITE_LEGACY: boolean;
+    VITE_PORT: number;
+    VITE_PROXY: [string, string][];
+    VITE_PUBLIC_PATH: string;
     VITE_USE_IMAGEMIN: boolean;
-    VITE_GENERATE_UI: string;
+    VITE_USE_MOCK: boolean;
+    VITE_USE_PWA: boolean;
   }
 
   // JSX
@@ -78,4 +79,9 @@ declare module 'vue' {
   export type JSXComponent<Props = any> =
     | { new (): ComponentPublicInstance<Props> }
     | FunctionalComponent<Props>;
+}
+
+// for custom
+declare global {
+  const conlog: typeof import('@/utils/log')['default']
 }

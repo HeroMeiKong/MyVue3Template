@@ -8,8 +8,8 @@ import { usePermissionStore } from '@/store/modules/permission';
 
 export function createStateGuard(router: Router) {
   router.afterEach((to) => {
-    // Just enter the login page and clear the authentication information
-    if (to.path === PageEnum.BASE_LOGIN) {
+    // Just enter the login or signup page and clear the authentication information
+    if (to.path === PageEnum.BASE_LOGIN || to.path === PageEnum.BASE_SIGNUP) {
       const userStore = useUserStore();
       const appStore = useAppStore();
       const permissionStore = usePermissionStore();

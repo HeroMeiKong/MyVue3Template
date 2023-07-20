@@ -3,9 +3,9 @@ import type { ConfirmOptions, ModalOptionsEx, ModalOptionsPartial, NotifyApi } f
 
 import { Modal, message, notification } from 'ant-design-vue';
 import { InfoCircleFilled, CheckCircleFilled, CloseCircleFilled } from '@ant-design/icons-vue';
-import { isString } from '@/utils/is';
-
 import { AlertStatusEnum } from '@/enums/viewEnum';
+import { customUseI18n } from '@/hooks/web/useI18n';
+import { isString } from '@/utils/is';
 
 function getIcon(iconType: string) {
   if (iconType === AlertStatusEnum.ERROR) {
@@ -43,7 +43,7 @@ function createConfirm(options: ModalOptionsEx): ConfirmOptions {
 }
 
 const getBaseOptions = () => {
-  const { t } = useI18n();
+  const { t } = customUseI18n();
   return {
     okText: t('word.confirm'),
     centered: true,

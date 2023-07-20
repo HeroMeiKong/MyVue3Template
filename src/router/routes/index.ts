@@ -1,9 +1,8 @@
 import type { AppRouteModule } from '#/router';
 
-import { PAGE_NOT_FOUND_ROUTE, REDIRECT_ROUTE } from '@/router/routes/basic';
 import { PageEnum } from '@/enums/commonEnum';
-
-const { t } = useI18n();
+import { t } from '@/hooks/web/useI18n';
+import { PAGE_NOT_FOUND_ROUTE, REDIRECT_ROUTE } from '@/router/routes/basic';
 
 // import.meta.glob() 直接引入所有的模块 Vite 独有的功能
 const modules: any = import.meta.glob('./modules/**/*.ts', { eager: true, import: 'default'});
@@ -30,7 +29,7 @@ export const RootRoute: AppRouteModule = {
 };
 
 export const LoginRoute: AppRouteModule = {
-  path: '/login',
+  path: PageEnum.BASE_LOGIN,
   name: 'Login',
   component: () => import('@/pages/system/login/index.vue'),
   meta: {
@@ -38,11 +37,21 @@ export const LoginRoute: AppRouteModule = {
   },
 };
 
+export const SignupRoute: AppRouteModule = {
+  path: PageEnum.BASE_SIGNUP,
+  name: 'Signup',
+  component: () => import('@/pages/system/signup/index.vue'),
+  meta: {
+    title: t('word.signup'),
+  },
+};
+
 // Basic routing without permission
 // 未经许可的基本路由
 export const basicRoutes = [
-  LoginRoute,
   RootRoute,
+  LoginRoute,
+  SignupRoute,
   REDIRECT_ROUTE,
-  PAGE_NOT_FOUND_ROUTE,
+  PAGE_NOT_FOUND_ROUTE
 ];

@@ -8,7 +8,7 @@ import { createProxy } from './build/vite/proxy';
 import createVitePlugins from './build/vite/plugins';
 import { wrapperEnv } from './build/utils';
 
-const pathTypes = path.resolve(__dirname, 'types')
+const pathTypes = path.resolve(__dirname, 'types');
 
 const { dependencies, devDependencies, name, version } = pkg;
 const __APP_INFO__ = {

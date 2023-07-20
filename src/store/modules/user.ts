@@ -6,6 +6,7 @@ import { getUserInfo, loginApi, logoutApi } from '@/apis/user';
 import { ROLES_KEY, TOKEN_KEY, USER_INFO_KEY } from '@/enums/cacheEnum';
 import { PageEnum } from '@/enums/commonEnum';
 import { RoleEnum } from '@/enums/userEnum';
+import { customUseI18n } from '@/hooks/web/useI18n';
 import { useMessage } from '@/hooks/web/useMessage';
 import { router } from '@/router';
 import { PAGE_NOT_FOUND_ROUTE } from '@/router/routes/basic';
@@ -14,7 +15,7 @@ import { usePermissionStore } from '@/store/modules/permission';
 import { getAuthCache, setAuthCache } from '@/utils/auth';
 import { isArray } from '@/utils/is';
 
-const { t } = useI18n();
+const { t } = customUseI18n();
 
 export const useUserStore = defineStore({
   id: 'app-user',

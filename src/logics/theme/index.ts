@@ -1,5 +1,7 @@
-import type { LowercaseThemesType } from '#/config';
-import { THEME_KEY } from '@/enums/cacheEnum';
+import type { ThemeConfig } from 'ant-design-vue/es/config-provider/context';
+import type { ThemesType } from '#/config';
+
+import { CUSTOM_THEME_KEY, THEME_KEY } from '@/enums/cacheEnum';
 import { ThemesEnum } from '@/enums/settingsEnum';
 
 import { createLocalStorage } from '@/utils/cache';
@@ -11,13 +13,21 @@ export async function getLocalTheme() {
   return ls.get(THEME_KEY);
 }
 
-export async function setLocalTheme(theme: LowercaseThemesType) {
+export async function getLocalCustomTheme() {
+  return ls.get(CUSTOM_THEME_KEY);
+}
+
+export async function setLocalTheme(theme: Lowercase<ThemesType>) {
   return ls.set(THEME_KEY, theme);
 }
 
-export default async function updateTheme(mode: LowercaseThemesType | null = ThemesEnum.LIGHT) {
+export async function setLocalCustomTheme(customTheme: ThemeConfig) {
+  return ls.set(CUSTOM_THEME_KEY, customTheme);
+}
+
+export default async function updateTheme(mode: Lowercase<ThemesType> = ThemesEnum.LIGHT) {
   // 更新 LocalStorage
-  const localTheme: LowercaseThemesType | null = await getLocalTheme();
+  const localTheme: Lowercase<ThemesType> | null = await getLocalTheme();
   if (localTheme !== mode) setLocalTheme(mode);
 
   // 更新 html css

@@ -2,6 +2,7 @@ import type { RequestMessageMode } from '#/common';
 
 import { RequestMessageModeEnum } from '@/enums/commonEnum';
 import { SessionTimeoutProcessingEnum } from '@/enums/settingsEnum';
+import { customUseI18n } from '@/hooks/web/useI18n';
 import { useMessage } from '@/hooks/web/useMessage';
 import projectSetting from '@/settings/projectSetting';
 import { useUserStoreWithOut } from '@/store/modules/user';
@@ -15,7 +16,7 @@ export function checkStatus(
   msg: string,
   errorMessageMode: Lowercase<RequestMessageMode> = RequestMessageModeEnum.MESSAGE,
 ): void {
-  const { t } = useI18n();
+  const { t } = customUseI18n();
   const userStore = useUserStoreWithOut();
   let errMessage = '';
 

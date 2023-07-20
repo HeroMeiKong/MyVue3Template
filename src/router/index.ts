@@ -4,7 +4,7 @@ import type { App } from 'vue';
 import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router';
 import { basicRoutes } from './routes';
 
-const USE_HISTORY = import.meta.env.USE_HISTORY;
+const USE_HISTORY = import.meta.env.USE_HISTORY; // 注意 Vite 目前只支持 string 类型
 
 // 白名单应该包含基本静态路由
 const WHITE_NAME_LIST: string[] = [];
@@ -19,7 +19,7 @@ getRouteNames(basicRoutes);
 // 创建一个可以被 Vue 应用程序使用的路由实例
 export const router = createRouter({
   // 创建一个 hash 历史记录。
-  history: USE_HISTORY ? createWebHistory(import.meta.env.VITE_PUBLIC_PATH) : createWebHashHistory(import.meta.env.VITE_PUBLIC_PATH),
+  history: USE_HISTORY === 'true' ? createWebHistory(import.meta.env.VITE_PUBLIC_PATH) : createWebHashHistory(import.meta.env.VITE_PUBLIC_PATH),
   // 应该添加到路由的初始路由列表。
   routes: basicRoutes as unknown as RouteRecordRaw[],
   // 是否应该禁止尾部斜杠。默认为假

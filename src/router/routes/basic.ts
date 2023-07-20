@@ -1,5 +1,6 @@
 import type { AppRouteModule } from '#/router';
 
+import { customUseI18n } from '@/hooks/web/useI18n';
 import {
   REDIRECT_NAME,
   LAYOUT,
@@ -7,7 +8,7 @@ import {
   PAGE_NOT_FOUND_NAME,
 } from '@/router/constant';
 
-const { t } = useI18n();
+const { t } = customUseI18n();
 
 // 404 on a page
 export const PAGE_NOT_FOUND_ROUTE: AppRouteModule = {
@@ -40,7 +41,7 @@ export const REDIRECT_ROUTE: AppRouteModule = {
     {
       path: '/redirect/:path(.*)',
       name: REDIRECT_NAME,
-      component: () => import('/@/views/sys/redirect/index.vue'),
+      component: () => import('@/pages/system/redirect/index.vue'),
       meta: {
         title: REDIRECT_NAME,
       },
@@ -60,7 +61,7 @@ export const ERROR_LOG_ROUTE: AppRouteModule = {
     {
       path: 'list',
       name: 'ErrorLogList',
-      component: () => import('/@/views/sys/error-log/index.vue'),
+      component: () => import('@/pages/system/error-log/index.vue'),
       meta: {
         title: t('routes.errorLogList'),
         currentActiveMenu: '/error-log',

@@ -88,6 +88,7 @@ const dict = {
     save: '保存',
     second: '秒',
     select: '选择',
+    signup: '注册',
     start: '开始',
     status: '状态',
     success: '成功',

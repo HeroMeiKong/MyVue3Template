@@ -1,3 +1,5 @@
+import type { ThemeConfig } from 'ant-design-vue/es/config-provider/context';
+
 import { CacheTypeEnum } from '@/enums/cacheEnum';
 import { LangsEnum } from '@/enums/commonEnum';
 import { RouterTransitionEnum, SessionTimeoutProcessingEnum, ThemesEnum } from '@/enums/settingsEnum';
@@ -6,7 +8,11 @@ export type LangType = keyof typeof LangsEnum;
 
 export type ThemesType = keyof typeof ThemesEnum;
 
-export type LowercaseThemesType = Lowercase<ThemesType>;
+export interface ADVSettings {
+  customTheme: ThemeConfig;
+  theme: ThemeConfig;
+  themeName: Lowercase<ThemesType>;
+}
 
 export interface GlobConfig {
   // Site title
@@ -77,10 +83,6 @@ export interface ProjectConfig {
   transitionSetting: TransitionSetting;
   // Use error-handler-plugin
   useErrorHandle: boolean;
-}
-
-export interface Settings {
-  theme: LowercaseThemesType;
 }
 
 export interface ThemeSetting {

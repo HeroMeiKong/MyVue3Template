@@ -8,14 +8,17 @@ import { useUserStoreWithOut } from '@/store/modules/user';
 
 const LOGIN_PATH = PageEnum.BASE_LOGIN;
 
+const SIGNUP_PATH = PageEnum.BASE_SIGNUP;
+
 const ROOT_PATH = RootRoute.path;
 
-const whitePathList: PageEnum[] = [LOGIN_PATH];
+const whitePathList: PageEnum[] = [LOGIN_PATH, SIGNUP_PATH];
 
 export function createPermissionGuard(router: Router) {
   const userStore = useUserStoreWithOut();
   const permissionStore = usePermissionStoreWithOut();
   router.beforeEach(async (to, from, next) => {
+    conlog('path: ', to);
     if (
       from.path === ROOT_PATH &&
       to.path === PageEnum.BASE_HOME &&
@@ -30,7 +33,7 @@ export function createPermissionGuard(router: Router) {
 
     // Whitelist can be directly entered
     if (whitePathList.includes(to.path as PageEnum)) {
-      if (to.path === LOGIN_PATH && token) {
+      if ((to.path === LOGIN_PATH || to.path === SIGNUP_PATH) && token) {
         const isSessionTimeout = userStore.getSessionTimeout;
         try {
           await userStore.afterLoginAction();
@@ -48,7 +51,7 @@ export function createPermissionGuard(router: Router) {
     // token or user does not exist
     if (!token) {
       // You can access without permission. You need to set the routing meta.ignoreAuth to true
-      if (to.meta.ignoreAuth) {
+      if (to.meta.ignoreAuth || to.path === SIGNUP_PATH) {
         next();
         return;
       }

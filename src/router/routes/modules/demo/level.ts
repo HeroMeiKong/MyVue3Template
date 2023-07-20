@@ -1,8 +1,9 @@
 import type { AppRouteModule } from '#/router';
 
+import { customUseI18n } from '@/hooks/web/useI18n';
 import { LAYOUT } from '@/router/constant';
 
-const { t } = useI18n();
+const { t } = customUseI18n();
 
 const permission: AppRouteModule = {
   path: '/level',

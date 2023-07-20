@@ -88,6 +88,7 @@ const dict = {
     save: 'Save',
     second: 'Second',
     select: 'Select',
+    signup: 'Signup',
     start: 'Start',
     status: 'Status',
     success: 'Success',

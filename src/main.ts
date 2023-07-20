@@ -10,6 +10,10 @@ import './global.css'
 import '@unocss/reset/normalize.css'
 import 'uno.css'
 
+// 全局 console.log
+import conlog from './utils/log';
+(window as any).conlog = conlog;
+
 async function bootstrap() {
   const app = createApp(App);
 

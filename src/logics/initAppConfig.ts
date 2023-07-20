@@ -2,14 +2,17 @@
  * Application configuration
  */
 import { useLocaleStore } from '@/store/modules/locale';
+import { useSettingStore } from '@/store/modules/setting';
 
 import { getCommonStoragePrefix, getStorageShortName } from '@/utils/env';
 
 // Initial project configuration
 export function initAppConfigStore() {
   const localeStore = useLocaleStore();
+  const settingStore = useSettingStore();
   // init store
   localeStore.initLocale();
+  settingStore.initSetting();
 
   setTimeout(() => {
     clearObsoleteStorage();

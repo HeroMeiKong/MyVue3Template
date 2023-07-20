@@ -8,6 +8,7 @@ import axios from 'axios';
 import { clone } from 'lodash-es';
 import { ContentTypeEnum, RequestEnum, RequestMessageModeEnum, ResultEnum } from '@/enums/commonEnum';
 import { useGlobSetting } from '@/hooks/setting';
+import { customUseI18n } from '@/hooks/web/useI18n';
 import { useMessage } from '@/hooks/web/useMessage';
 import { useErrorLogStoreWithOut } from '@/store/modules/errorLog';
 import { useUserStoreWithOut } from '@/store/modules/user';
@@ -31,7 +32,7 @@ const transform: AxiosTransform = {
    * @description: 处理响应数据。如果数据不是预期格式，可直接抛出错误
    */
   transformResponseHook: (res: AxiosResponse<Result>, options: RequestOptions) => {
-    const { t } = useI18n();
+    const { t } = customUseI18n();
     const { isTransformResponse, isReturnNativeResponse } = options;
     // 是否返回原生响应头 比如：需要获取响应头时使用该属性
     if (isReturnNativeResponse) {
@@ -175,7 +176,7 @@ const transform: AxiosTransform = {
    * @description: 响应错误处理
    */
   responseInterceptorsCatch: (axiosInstance: AxiosInstance, error: any) => {
-    const { t } = useI18n();
+    const { t } = customUseI18n();
     const errorLogStore = useErrorLogStoreWithOut();
     errorLogStore.addAjaxErrorInfo(error);
     const { response, code, message, config } = error || {};

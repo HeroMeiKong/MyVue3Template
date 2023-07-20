@@ -6,7 +6,7 @@ import { localeSetting } from "@/settings/localeSetting";
 import { createI18n } from 'vue-i18n';
 import { useLocaleStoreWithOut } from '@/store/modules/locale';
 
-export let i18n: ReturnType<typeof createI18n>;
+export let i18n: any;
 export const loadLocalePool: LangType[] = [];
 
 export function setHtmlPageLang(locale: LangType) {
