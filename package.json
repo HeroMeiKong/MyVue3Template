@@ -2,6 +2,20 @@
   "name": "vue3template",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://github.com/HeroMeiKong/MyVue3Template",
+  "bugs": {
+    "url": "https://github.com/HeroMeiKong/MyVue3Template/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HeroMeiKong/MyVue3Template.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "V3T",
+    "email": "xiaopangfeng4@hotmail.com",
+    "url": "https://github.com/HeroMeiKong"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -53,6 +67,7 @@
     "vue-router": "^4.2.4"
   },
   "devDependencies": {
+    "@commitlint/config-conventional": "^17.6.7",
     "@iconify-json/mdi": "^1.1.53",
     "@types/crypto-js": "^4.1.1",
     "@types/lodash-es": "^4.17.8",
@@ -63,6 +78,8 @@
     "@unocss/preset-rem-to-px": "^0.53.5",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vitejs/plugin-vue-jsx": "^3.0.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-git": "^1.7.0",
     "dotenv": "^16.3.1",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
@@ -76,5 +93,10 @@
     "vite": "^4.4.5",
     "vite-plugin-mock": "^2.9.8",
     "vue-tsc": "^1.8.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
   }
 }
