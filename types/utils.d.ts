@@ -23,7 +23,7 @@ export interface EncryptionParams {
 
 export interface Result<T = any> {
   code: number;
-  type: Omit<Lowercase<AlertStatus>, AlertStatusEnum.INFO>;
+  type: Omit<AlertStatus, AlertStatusEnum.INFO>;
   message: string;
   result: T;
 }
@@ -83,9 +83,9 @@ export interface RequestOptions {
   // 请求拼接路径
   urlPrefix?: string;
   // Error message prompt type
-  errorMessageMode?: Lowercase<RequestMessageMode>;
+  errorMessageMode?: RequestMessageMode;
   // Success message prompt type
-  successMessageMode?: Lowercase<RequestMessageMode>;
+  successMessageMode?: RequestMessageMode;
   // Whether to add a timestamp
   joinTime?: boolean;
   ignoreCancelToken?: boolean;

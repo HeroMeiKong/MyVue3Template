@@ -24,7 +24,7 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
 
 - 增量打包 + 构建：[Turbo](https://github.com/vercel/turbo) 待完善
 - `UI`: [AntDesignVue](https://next.antdv.com/components/overview-cn) Done
-- 模拟数据：[MockJS](http://mockjs.com/) In Progress
+- 模拟数据：[MockJS](http://mockjs.com/) Done
 - 国际化：[vue-i18n](https://github.com/kazupon/vue-i18n)：Done
 - `Vue3-JSX`：[@vitejs/plugin-vue-jsx](https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue-jsx) Done
 - 改进 `Git Hooks`：[husky](https://github.com/typicode/husky) 待完善

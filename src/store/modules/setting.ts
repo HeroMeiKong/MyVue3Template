@@ -20,7 +20,7 @@ export const useSettingStore = defineStore({
     getTheme(state): ThemeConfig {
       return state.theme ?? themeSetting[ThemesEnum.LIGHT];
     },
-    getThemeName(state): Lowercase<ThemesType> {
+    getThemeName(state): ThemesType {
       return state.themeName ?? ThemesEnum.LIGHT;
     }
   },
@@ -29,7 +29,7 @@ export const useSettingStore = defineStore({
       this.customTheme = customTheme;
       setLocalCustomTheme(customTheme);
     },
-    setTheme(theme: Lowercase<ThemesType>) {
+    setTheme(theme: ThemesType) {
       this.theme = themeSetting[theme];
       this.themeName = theme;
       updateTheme(theme);

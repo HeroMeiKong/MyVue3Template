@@ -11,7 +11,7 @@ export type I18nGlobalTranslation = {
 
 export type I18nTranslationRestParameters = [string, any];
 
-export type RequestMessageMode = keyof typeof RequestMessageModeEnum;
+export type RequestMessageMode = `${RequestMessageModeEnum}`;
 
 export interface LangType {
   text: string;

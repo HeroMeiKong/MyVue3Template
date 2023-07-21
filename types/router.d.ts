@@ -18,7 +18,7 @@ export interface AppRouteModule extends Omit<RouteRecordRaw, 'meta'> {
 }
 
 export interface MenuTag {
-  type?: Lowercase<TagStatus>;
+  type?: TagStatus;
   content?: string;
   dot?: boolean;
 }

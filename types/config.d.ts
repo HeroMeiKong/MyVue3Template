@@ -6,12 +6,12 @@ import { RouterTransitionEnum, SessionTimeoutProcessingEnum, ThemesEnum } from '
 
 export type LangType = keyof typeof LangsEnum;
 
-export type ThemesType = keyof typeof ThemesEnum;
+export type ThemesType = `${ThemesEnum}`;
 
 export interface ADVSettings {
   customTheme: ThemeConfig;
   theme: ThemeConfig;
-  themeName: Lowercase<ThemesType>;
+  themeName: ThemesType;
 }
 
 export interface GlobConfig {

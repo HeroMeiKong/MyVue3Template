@@ -4,24 +4,24 @@ import type { NotificationArgsProps, ConfigProps } from 'ant-design-vue/lib/noti
 import { LeftRightEnum, TopBottomEnum } from '@/enums/basicEnum';
 import { AlertStatusEnum, TagStatusEnum } from '@/enums/viewEnum';
 
-export type AlertStatus = keyof typeof AlertStatusEnum;
+export type AlertStatus = `${AlertStatusEnum}`;
 
-export type LeftRight = keyof typeof LeftRightEnum;
+export type LeftRight = `${LeftRightEnum}`;
 
-export type TagStatus = keyof typeof TagStatusEnum;
+export type TagStatus = `${TagStatusEnum}`;
 
-export type TopBottom = keyof typeof TopBottomEnum;
+export type TopBottom = `${TopBottomEnum}`;
 
-export type TopBottomCenter = TopBottom | 'CENTER';
+export type TopBottomCenter = TopBottom | 'center';
 
-export type NotificationPlacement = `${Lowercase<TopBottom>}${Capitalize<Lowercase<LeftRight>>}`;
+export type NotificationPlacement = `${TopBottom}${Capitalize<LeftRight>}`;
 
-export type PaginationPosition = `${Lowercase<TopBottom>}${Capitalize<Lowercase<TopBottomCenter>>}`;
+export type PaginationPosition = `${TopBottom}${Capitalize<TopBottomCenter>}`;
 
-export type PopConfirmPlacement = `${Lowercase<TopBottom>}${Capitalize<Lowercase<LeftRight>>}` | `${Lowercase<LeftRight>}${Capitalize<Lowercase<TopBottom>>}` | Lowercase<LeftRight> | Lowercase<TopBottom>;
+export type PopConfirmPlacement = `${TopBottom}${Capitalize<LeftRight>}` | `${LeftRight}${Capitalize<TopBottom>}` | LeftRight | TopBottom;
 
 export interface ModalOptionsEx extends Omit<ModalFuncProps, 'iconType'> {
-  iconType: Lowercase<AlertStatus>;
+  iconType: AlertStatus;
 }
 export type ModalOptionsPartial = Partial<ModalOptionsEx> & Pick<ModalOptionsEx, 'content'>;
 

@@ -17,7 +17,7 @@ export async function getLocalCustomTheme() {
   return ls.get(CUSTOM_THEME_KEY);
 }
 
-export async function setLocalTheme(theme: Lowercase<ThemesType>) {
+export async function setLocalTheme(theme: ThemesType) {
   return ls.set(THEME_KEY, theme);
 }
 
@@ -25,9 +25,9 @@ export async function setLocalCustomTheme(customTheme: ThemeConfig) {
   return ls.set(CUSTOM_THEME_KEY, customTheme);
 }
 
-export default async function updateTheme(mode: Lowercase<ThemesType> = ThemesEnum.LIGHT) {
+export default async function updateTheme(mode: ThemesType = ThemesEnum.LIGHT) {
   // 更新 LocalStorage
-  const localTheme: Lowercase<ThemesType> | null = await getLocalTheme();
+  const localTheme: ThemesType | null = await getLocalTheme();
   if (localTheme !== mode) setLocalTheme(mode);
 
   // 更新 html css

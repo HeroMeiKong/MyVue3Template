@@ -12,7 +12,7 @@ export function getUserInfo() {
 /**
  * @description: user login api
  */
-export function loginApi(params: LoginParams, mode: Lowercase<RequestMessageMode> = RequestMessageModeEnum.MODAL) {
+export function loginApi(params: LoginParams, mode: RequestMessageMode = RequestMessageModeEnum.MODAL) {
   return defHttp.post<LoginResultModel>(
     {
       url: UserApiEnum.Login,
