@@ -2,8 +2,8 @@ import type { LocaleSetting, LangType } from '#/config';
 import { LangsEnum } from "@/enums/commonEnum";
 
 export const LOCALE: { [key: string]: LangType } = {
-  EN: LangsEnum['en'],
-  ZH_CN: LangsEnum['zh-CN'],
+  EN: LangsEnum.EN,
+  ZH_CN: LangsEnum.ZH,
 };
 
 export const localeSetting: LocaleSetting = {

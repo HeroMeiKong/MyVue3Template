@@ -4,7 +4,7 @@ import { CacheTypeEnum } from '@/enums/cacheEnum';
 import { LangsEnum } from '@/enums/commonEnum';
 import { RouterTransitionEnum, SessionTimeoutProcessingEnum, ThemesEnum } from '@/enums/settingsEnum';
 
-export type LangType = keyof typeof LangsEnum;
+export type LangType = `${LangsEnum}`;
 
 export type ThemesType = `${ThemesEnum}`;
 

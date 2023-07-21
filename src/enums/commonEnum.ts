@@ -8,8 +8,8 @@ export enum ContentTypeEnum {
 }
 
 export enum LangsEnum {
-  'en' = 'en',
-  'zh-CN' = 'zh-CN'
+  EN = 'en',
+  ZH = 'zh-CN'
 }
 
 export enum PageEnum {
