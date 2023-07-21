@@ -53,9 +53,9 @@ export interface UploadFileParams {
   [key: string]: any;
 }
 
-/*
-** unit
-*/
+/**
+ * unit
+ */
 
 export interface CreateStorageParams extends EncryptionParams {
   prefixKey: string;

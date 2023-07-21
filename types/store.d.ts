@@ -25,9 +25,9 @@ export interface RoleInfo {
   value: string;
 }
 
-/*
-** unit
-*/
+/**
+ * unit
+ */
 export interface UserInfo {
   userId: string | number;
   username: string;

@@ -1,27 +1,29 @@
-// import { defHttp } from '@/utils/axios';
+import type { RequestMessageMode } from '#/common';
+import type { LoginParams, LoginResultModel, GetUserInfoModel } from '#/request';
+
+import { UserApiEnum } from '@/enums/apisEnum';
+import { RequestMessageModeEnum } from '@/enums/commonEnum';
+import { defHttp } from '@/utils/axios';
 
 export function getUserInfo() {
-  return {
-    roles: [],
-    // 用户id
-    userId: 101,
-    // 用户名
-    username: 'super',
-    // 真实名字
-    realName: 'super',
-    // 头像
-    avatar: '',
-    // 介绍
-    desc: '',
-  }
+  return defHttp.get<GetUserInfoModel>({ url: UserApiEnum.GetUserInfo }, { errorMessageMode: RequestMessageModeEnum.NONE });
 }
 
-export function loginApi(params: any) {
-  return {
-    userId: 101,
-    token: 'sss',
-    role: 'super',
-  };
+/**
+ * @description: user login api
+ */
+export function loginApi(params: LoginParams, mode: Lowercase<RequestMessageMode> = RequestMessageModeEnum.MODAL) {
+  return defHttp.post<LoginResultModel>(
+    {
+      url: UserApiEnum.Login,
+      params,
+    },
+    {
+      errorMessageMode: mode,
+    },
+  );
 }
 
-export function logoutApi() {}
+export function logoutApi() {
+  return defHttp.get({ url: UserApiEnum.Logout });
+}

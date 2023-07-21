@@ -6,6 +6,13 @@ export interface LoginParams {
   password: string;
 }
 
+export interface RequestParams {
+  method: string;
+  body: any;
+  headers?: { authorization?: string };
+  query: any;
+}
+
 export interface RoleInfo {
   roleName: string;
   value: string;

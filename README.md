@@ -22,9 +22,9 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
 开发：`Vue3 + TypeScript + Vite + AntDesignVue + Pinia + Vue-Router`
 功能：
 
-- 增量打包 + 构建：[Turbo](https://github.com/vercel/turbo)：待完善
+- 增量打包 + 构建：[Turbo](https://github.com/vercel/turbo) 待完善
 - `UI`: [AntDesignVue](https://next.antdv.com/components/overview-cn) Done
-- 模拟数据：[MockJS](http://mockjs.com/)：In Progress
+- 模拟数据：[MockJS](http://mockjs.com/) In Progress
 - 国际化：[vue-i18n](https://github.com/kazupon/vue-i18n)：Done
 - `Vue3-JSX`：[@vitejs/plugin-vue-jsx](https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue-jsx) Done
 - 改进 `Git Hooks`：[husky](https://github.com/typicode/husky) 待完善
@@ -33,12 +33,13 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
 - 更多的 `Icon`：`@iconify/json`（全量）、`@iconify-json/mdi（Material Design Icons）`等，[查询所有 Icon](https://icones.js.org/) Done
 - `Vueuse`：待完善
 - `pinia`：Done
-- `Vue-Router`：In Progress
+- `Vue-Router`：Done
 - `Axios`: Done
 - `Lint`: 待完善
 - 单元测试：待完善
-- 加解密 Done
-- i18n-ally 兼容
+- 基础组件：待完善
+- 加解密：Done
+- i18n-ally 兼容：待完善
 
 结构：
 

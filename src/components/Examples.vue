@@ -19,12 +19,14 @@
   import { customUseI18n } from '@/hooks/web/useI18n';
   import { useLocale } from '@/locales/useLocale';
   import { useSettingStore } from '@/store/modules/setting';
+  import { useUserStore } from '@/store/modules/user';
 
   const { t } = customUseI18n();
   const { changeLocale, getLocale } = useLocale();
   const router = useRouter();
   const current = ref(6)
   const { getThemeName } = useThemeSetting();
+  const userStore = useUserStore();
 
   const oppositeTheme = computed(() => getThemeName.value === ThemesEnum.LIGHT ? ThemesEnum.DARK : ThemesEnum.LIGHT);
 
@@ -36,6 +38,7 @@
     settingStore.setTheme(oppositeTheme.value);
   };
   const goTo = (name: string) => {
+    userStore.getUserInfoAction();
     router.push({
       name
     });
