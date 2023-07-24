@@ -1,7 +1,7 @@
 {
   "name": "vue3template",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "homepage": "https://github.com/HeroMeiKong/MyVue3Template",
   "bugs": {
     "url": "https://github.com/HeroMeiKong/MyVue3Template/issues"
@@ -18,11 +18,19 @@
   },
   "type": "module",
   "scripts": {
+    "build": "pnpm typecheck:vue && vite build",
+    "build:dev": "pnpm typecheck:vue && vite build --mode development",
+    "build:no-cache": "pnpm clean:cache && pnpm run build",
+    "build:pre": "pnpm typecheck:vue && vite build --mode staging",
     "dev": "vite",
-    "build": "vue-tsc && vite build",
-    "build:dev": "vue-tsc && vite build --mode development",
-    "build:pre": "vue-tsc && vite build --mode staging",
-    "preview": "vite preview"
+    "lint": "pnpm typecheck:vue && pnpm lint:eslint && pnpm lint:prettier && pnpm lint:stylelint",
+    "lint:eslint": "eslint --cache \"{build,mock,src,type}/**/*.{js,jsx,ts,tsx,vue}\" --fix",
+    "lint:prettier": "prettier --write .",
+    "lint:stylelint": "stylelint \"**/*.{vue,css,less.scss}\" --fix --cache --cache-location node_modules/.cache/stylelint/",
+    "prepare": "husky install",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "typecheck:vue": "vue-tsc --noEmit"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
@@ -47,6 +55,11 @@
     "*.md": [
       "prettier --write"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
   },
   "dependencies": {
     "@ant-design/icons-vue": "^6.1.0",
@@ -75,16 +88,40 @@
     "@types/node": "^20.4.2",
     "@types/nprogress": "^0.2.0",
     "@types/qs": "^6.9.7",
+    "@typescript-eslint/eslint-plugin": "^6.1.0",
+    "@typescript-eslint/parser": "^6.1.0",
+    "@unocss/eslint-config": "^0.53.6",
     "@unocss/preset-rem-to-px": "^0.53.5",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vitejs/plugin-vue-jsx": "^3.0.1",
     "cz-conventional-changelog": "^3.3.0",
     "cz-git": "^1.7.0",
     "dotenv": "^16.3.1",
-    "husky": "^8.0.3",
+    "eslint": "^8.45.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-vue": "^9.15.1",
+    "husky": "^8.0.0",
     "lint-staged": "^13.2.3",
+    "postcss": "^8.4.27",
+    "postcss-html": "^1.5.0",
+    "postcss-less": "^6.0.0",
+    "postcss-scss": "^4.0.6",
+    "prettier": "3.0.0",
+    "prettier-plugin-packagejson": "^2.4.5",
     "rollup": "^3.26.3",
     "sass": "^1.64.0",
+    "stylelint": "^15.10.2",
+    "stylelint-config-property-sort-order-smacss": "^9.1.0",
+    "stylelint-config-recommended": "^13.0.0",
+    "stylelint-config-recommended-scss": "^12.0.0",
+    "stylelint-config-recommended-vue": "^1.5.0",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-config-standard-scss": "^10.0.0",
+    "stylelint-order": "^6.0.3",
+    "stylelint-prettier": "^4.0.0",
     "typescript": "^5.1.6",
     "unocss": "^0.53.5",
     "unplugin-auto-import": "^0.16.6",
@@ -92,11 +129,7 @@
     "unplugin-vue-components": "^0.25.1",
     "vite": "^4.4.5",
     "vite-plugin-mock": "^2.9.8",
+    "vue-eslint-parser": "^9.3.1",
     "vue-tsc": "^1.8.5"
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-git"
-    }
   }
 }

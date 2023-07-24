@@ -14,7 +14,7 @@ export const useAppStore = defineStore({
   id: 'app',
   state: (): AppState => ({
     pageLoading: false,
-    projectConfig: Persistent.getLocal(PROJ_CFG_KEY),
+    projectConfig: Persistent.getLocal(PROJ_CFG_KEY)
   }),
   getters: {
     getPageLoading(state): boolean {
@@ -25,7 +25,7 @@ export const useAppStore = defineStore({
     },
     getTransitionSetting(): TransitionSetting {
       return this.getProjectConfig.transitionSetting;
-    },
+    }
   },
   actions: {
     setPageLoading(loading: boolean): void {
@@ -50,8 +50,8 @@ export const useAppStore = defineStore({
         this.setPageLoading(loading);
         clearTimeout(timeId);
       }
-    },
-  },
+    }
+  }
 });
 
 // Need to be used outside the setup

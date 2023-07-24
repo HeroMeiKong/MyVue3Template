@@ -35,7 +35,7 @@ export const usePermissionStore = defineStore({
     backMenuList: [],
     // menu List
     // 菜单列表
-    frontMenuList: [],
+    frontMenuList: []
   }),
   getters: {
     getPermCodeList(state): string[] | number[] {
@@ -52,7 +52,7 @@ export const usePermissionStore = defineStore({
     },
     getIsDynamicAddedRoute(state): boolean {
       return state.isDynamicAddedRoute;
-    },
+    }
   },
   actions: {
     setPermCodeList(codeList: string[]) {
@@ -89,10 +89,10 @@ export const usePermissionStore = defineStore({
 
     // 构建路由
     async buildRoutesAction(): Promise<AppRouteModule[]> {
-      let routes: AppRouteModule[] = [];
+      const routes: AppRouteModule[] = [];
       return routes;
-    },
-  },
+    }
+  }
 });
 
 // Need to be used outside the setup

@@ -14,12 +14,12 @@ const lsLocaleSetting = (ls.get(LOCALE_KEY) || localeSetting) as LocaleSetting;
 export const useLocaleStore = defineStore({
   id: 'app-locale', // 可隐藏使用上面那种
   state: (): LocaleState => ({
-    localInfo: lsLocaleSetting,
+    localInfo: lsLocaleSetting
   }),
   getters: {
     getLocale(state): LangType {
       return state.localInfo?.locale ?? 'zh-CN';
-    },
+    }
   },
   actions: {
     /**
@@ -36,11 +36,11 @@ export const useLocaleStore = defineStore({
     initLocale() {
       this.setLocaleInfo({
         ...localeSetting,
-        ...this.localInfo,
+        ...this.localInfo
       });
-    },
+    }
   },
-  persist: true, // 持久化 Store
+  persist: true // 持久化 Store
 });
 
 export function useLocaleStoreWithOut() {

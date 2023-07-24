@@ -10,7 +10,7 @@ export const createStorage: any = ({
   key = cacheCipher.key,
   iv = cacheCipher.iv,
   timeout = null,
-  hasEncrypt = true,
+  hasEncrypt = true
 }: Partial<CreateStorageParams> = {}) => {
   if (hasEncrypt && [key.length, iv.length].some((item) => item !== 16)) {
     throw new Error('When hasEncrypt is true, the key or iv must be 16 bits!');
@@ -55,7 +55,7 @@ export const createStorage: any = ({
       const stringData = JSON.stringify({
         value,
         time: Date.now(),
-        expire: !isNullOrUnDef(expire) ? new Date().getTime() + expire * 1000 : null,
+        expire: !isNullOrUnDef(expire) ? new Date().getTime() + expire * 1000 : null
       });
       const stringifyValue = this.hasEncrypt
         ? this.encryption.encryptByAES(stringData)

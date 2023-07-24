@@ -11,7 +11,7 @@ export const useErrorLogStore = defineStore({
   id: 'app-error-log',
   state: (): ErrorLogState => ({
     errorLogInfoList: null,
-    errorLogListCount: 0,
+    errorLogListCount: 0
   }),
   getters: {
     getErrorLogInfoList(state): ErrorLogInfo[] {
@@ -19,13 +19,13 @@ export const useErrorLogStore = defineStore({
     },
     getErrorLogListCount(state): number {
       return state.errorLogListCount;
-    },
+    }
   },
   actions: {
     addErrorLogInfo(info: ErrorLogInfo) {
       const item = {
         ...info,
-        time: formatToDateTime(new Date()),
+        time: formatToDateTime(new Date())
       };
       this.errorLogInfoList = [item, ...(this.errorLogInfoList || [])];
       this.errorLogListCount += 1;
@@ -40,19 +40,19 @@ export const useErrorLogStore = defineStore({
      * @param error
      * @returns
      */
-    addAjaxErrorInfo(error) {
+    addAjaxErrorInfo(error: any) {
       const { useErrorHandle } = projectSetting;
       if (!useErrorHandle) {
         return;
       }
       const errInfo: Partial<ErrorLogInfo> = {
         message: error.message,
-        type: ErrorTypeEnum.AJAX,
+        type: ErrorTypeEnum.AJAX
       };
       if (error.response) {
         const {
           config: { url = '', data: params = '', method = 'get', headers = {} } = {},
-          data = {},
+          data = {}
         } = error.response;
         errInfo.url = url;
         errInfo.name = 'Ajax Error!';
@@ -61,9 +61,9 @@ export const useErrorLogStore = defineStore({
         errInfo.detail = JSON.stringify({ params, method, headers });
       }
       this.addErrorLogInfo(errInfo as ErrorLogInfo);
-    },
+    }
   },
-  persist: true,
+  persist: true
 });
 
 // Need to be used outside the setup

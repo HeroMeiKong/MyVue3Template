@@ -1,4 +1,4 @@
-import { useSettingStore } from "@/store/modules/setting";
+import { useSettingStore } from '@/store/modules/setting';
 
 export default function useThemeSetting() {
   const themeStore = useSettingStore();

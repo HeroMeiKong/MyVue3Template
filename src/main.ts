@@ -1,4 +1,4 @@
-import App from './App.vue'
+import App from './App.vue';
 import { setupI18n } from '@/locales/setupI18n';
 import { setupErrorHandle } from '@/logics/error-handle';
 import { initAppConfigStore } from '@/logics/initAppConfig';
@@ -6,12 +6,13 @@ import { router, setupRouter } from '@/router';
 import { setupRouterGuard } from '@/router/guard';
 import { setupStore } from '@/store';
 
-import './global.css'
-import '@unocss/reset/normalize.css'
-import 'uno.css'
+import './global.css';
+import '@unocss/reset/normalize.css';
+import 'uno.css';
 
 // 全局 console.log
 import conlog from './utils/log';
+
 (window as any).conlog = conlog;
 
 async function bootstrap() {

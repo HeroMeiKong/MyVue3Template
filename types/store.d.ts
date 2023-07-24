@@ -7,9 +7,7 @@ import {
   ROLES_KEY,
   LOCK_INFO_KEY,
   PROJ_CFG_KEY,
-  APP_LOCAL_CACHE_KEY,
-  APP_SESSION_CACHE_KEY,
-  MULTIPLE_TABS_KEY,
+  MULTIPLE_TABS_KEY
 } from '@/enums/cacheEnum';
 import { ErrorTypeEnum } from '@/enums/exceptionEnum';
 

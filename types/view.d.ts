@@ -18,7 +18,11 @@ export type NotificationPlacement = `${TopBottom}${Capitalize<LeftRight>}`;
 
 export type PaginationPosition = `${TopBottom}${Capitalize<TopBottomCenter>}`;
 
-export type PopConfirmPlacement = `${TopBottom}${Capitalize<LeftRight>}` | `${LeftRight}${Capitalize<TopBottom>}` | LeftRight | TopBottom;
+export type PopConfirmPlacement =
+  | `${TopBottom}${Capitalize<LeftRight>}`
+  | `${LeftRight}${Capitalize<TopBottom>}`
+  | LeftRight
+  | TopBottom;
 
 export interface ModalOptionsEx extends Omit<ModalFuncProps, 'iconType'> {
   iconType: AlertStatus;

@@ -1,4 +1,4 @@
-import { viteMockServe } from "vite-plugin-mock"
+import { viteMockServe } from 'vite-plugin-mock';
 
 export default function setupMockServer(isBuild: boolean) {
   return viteMockServe({
@@ -11,5 +11,5 @@ export default function setupMockServer(isBuild: boolean) {
 
       setupProdMockServer();
       `
-  })
+  });
 }

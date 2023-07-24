@@ -16,7 +16,7 @@ declare global {
       devDependencies: Recordable<string>;
     };
     lastBuildTime: string;
-  }
+  };
 
   // Vue
   type PropType<T> = VuePropType<T>;
@@ -83,5 +83,5 @@ declare module 'vue' {
 
 // for custom
 declare global {
-  const conlog: typeof import('@/utils/log')['default']
+  const conlog: typeof import('@/utils/log')['default'];
 }

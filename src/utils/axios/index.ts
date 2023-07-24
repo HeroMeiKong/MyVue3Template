@@ -6,7 +6,12 @@ import type { AxiosTransform, CreateAxiosOptions, RequestOptions, Result } from 
 
 import axios from 'axios';
 import { clone } from 'lodash-es';
-import { ContentTypeEnum, RequestEnum, RequestMessageModeEnum, ResultEnum } from '@/enums/commonEnum';
+import {
+  ContentTypeEnum,
+  RequestEnum,
+  RequestMessageModeEnum,
+  ResultEnum
+} from '@/enums/commonEnum';
 import { useGlobSetting } from '@/hooks/setting';
 import { customUseI18n } from '@/hooks/web/useI18n';
 import { useMessage } from '@/hooks/web/useMessage';
@@ -138,7 +143,7 @@ const transform: AxiosTransform = {
         if (joinParamsToUrl) {
           config.url = setObjToUrlParams(
             config.url as string,
-            Object.assign({}, config.params, config.data),
+            Object.assign({}, config.params, config.data)
           );
         }
       } else {
@@ -180,7 +185,8 @@ const transform: AxiosTransform = {
     const errorLogStore = useErrorLogStoreWithOut();
     errorLogStore.addAjaxErrorInfo(error);
     const { response, code, message, config } = error || {};
-    const errorMessageMode = config?.requestOptions?.errorMessageMode || RequestMessageModeEnum.NONE;
+    const errorMessageMode =
+      config?.requestOptions?.errorMessageMode || RequestMessageModeEnum.NONE;
     const msg: string = response?.data?.error?.message ?? '';
     const err: string = error?.toString?.() ?? '';
     let errMessage = '';
@@ -219,7 +225,7 @@ const transform: AxiosTransform = {
       // @ts-ignore
       retryRequest.retry(axiosInstance, error);
     return Promise.reject(error);
-  },
+  }
 };
 
 function createAxios(opt?: Partial<CreateAxiosOptions>) {
@@ -267,12 +273,12 @@ function createAxios(opt?: Partial<CreateAxiosOptions>) {
           retryRequest: {
             isOpenRetry: true,
             count: 5,
-            waitTime: 100,
-          },
-        },
+            waitTime: 100
+          }
+        }
       },
-      opt || {},
-    ),
+      opt || {}
+    )
   );
 }
 export const defHttp = createAxios();

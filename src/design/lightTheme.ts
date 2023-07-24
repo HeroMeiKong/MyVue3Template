@@ -5,7 +5,7 @@ const light = {
     // Map Token
     colorPrimaryBg: '#e6f7ff',
     // Alias Token
-    colorLink: '#1890ff',
+    colorLink: '#1890ff'
   }
 };
 

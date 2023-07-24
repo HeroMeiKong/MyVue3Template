@@ -1,5 +1,5 @@
 import type { FunctionArgs } from '@vueuse/core';
-import type { ViewportOffsetResult } from '#/custom'; 
+import type { ViewportOffsetResult } from '#/custom';
 import { upperFirst } from 'lodash-es';
 
 export function getBoundingClientRect(element: Element): DOMRect | number {
@@ -17,7 +17,7 @@ function trim(string: string) {
 export function hasClass(el: Element, cls: string) {
   if (!el || !cls) return false;
   if (cls.indexOf(' ') !== -1) throw new Error('className should not contain space.');
-  const classes = cls.split('.').filter(value => value);
+  const classes = cls.split('.').filter((value) => value);
   const { length } = classes;
   if (el.classList) {
     for (let i = 0; i < length; i++) {
@@ -36,7 +36,7 @@ export function hasClass(el: Element, cls: string) {
 export function addClass(el: Element, cls: string) {
   if (!el || !cls) return;
   if (cls.indexOf(' ') !== -1) throw new Error('className should not contain space.');
-  const classes = cls.split('.').filter(value => value);
+  const classes = cls.split('.').filter((value) => value);
   const { length } = classes;
   let curClass = el.className;
 
@@ -58,7 +58,7 @@ export function addClass(el: Element, cls: string) {
 export function removeClass(el: Element, cls: string) {
   if (!el || !cls) return;
   if (cls.indexOf(' ') !== -1) throw new Error('className should not contain space.');
-  const classes = cls.split('.').filter(value => value);
+  const classes = cls.split('.').filter((value) => value);
   const { length } = classes;
   let curClass = ' ' + el.className + ' ';
 
@@ -78,11 +78,11 @@ export function removeClass(el: Element, cls: string) {
 }
 
 // cls: 'class1' | 'class1.class2' | '.class1.class2'
-export function sameClass(el: Element, cls: string = "") {
+export function sameClass(el: Element, cls: string = '') {
   if (!el) return;
   if (cls.indexOf(' ') !== -1) throw new Error('className should not contain space.');
   if (el.className === cls) return true;
-  const classes = cls.split('.').filter(value => value);
+  const classes = cls.split('.').filter((value) => value);
   const { length } = el.classList;
   if (classes.length !== length) return false;
 
@@ -100,9 +100,9 @@ export function setClass(el: Element, cls?: string) {
     el.className = '';
     return;
   }
-  
+
   if (cls.indexOf(' ') !== -1) throw new Error('className should not contain space.');
-  const classes = cls.split('.').filter(value => value);
+  const classes = cls.split('.').filter((value) => value);
   const currentClass = classes.join(' ');
   el.className = currentClass;
 }
@@ -149,7 +149,7 @@ export function getViewportOffset(element: Element): ViewportOffsetResult {
     right: clientWidth - rectWidth - left,
     bottom: clientHeight - rectHeight - top,
     rightIncludeBody: clientWidth - left,
-    bottomIncludeBody: clientHeight - top,
+    bottomIncludeBody: clientHeight - top
   };
 }
 
@@ -162,14 +162,14 @@ export function hackCss(attr: string, value: string) {
   });
   return {
     ...styleObj,
-    [attr]: value,
+    [attr]: value
   };
 }
 
 export function on(
   element: Element | HTMLElement | Document | Window,
   event: string,
-  handler: EventListenerOrEventListenerObject,
+  handler: EventListenerOrEventListenerObject
 ): void {
   if (element && event && handler) {
     element.addEventListener(event, handler, false);
@@ -179,7 +179,7 @@ export function on(
 export function off(
   element: Element | HTMLElement | Document | Window,
   event: string,
-  handler: Fn,
+  handler: Fn
 ): void {
   if (element && event && handler) {
     element.removeEventListener(event, handler, false);
@@ -187,7 +187,7 @@ export function off(
 }
 
 export function once(el: HTMLElement, event: string, fn: EventListener): void {
-  const listener = function (this: any, ...args: unknown[]) {
+  const listener = function (this: any, ...args: any) {
     if (fn) {
       fn.apply(this, args);
     }
@@ -199,7 +199,7 @@ export function once(el: HTMLElement, event: string, fn: EventListener): void {
 export function useRafThrottle<T extends FunctionArgs>(fn: T): T {
   let locked = false;
   // @ts-ignore
-  return function (...args: any[]) {
+  return function (...args: any) {
     if (locked) return;
     locked = true;
     window.requestAnimationFrame(() => {

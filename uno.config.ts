@@ -7,8 +7,8 @@ import {
   presetWebFonts,
   transformerDirectives,
   transformerVariantGroup
-} from 'unocss'
-import presetRemToPx from '@unocss/preset-rem-to-px'
+} from 'unocss';
+import presetRemToPx from '@unocss/preset-rem-to-px';
 
 export default defineConfig({
   shortcuts: [],
@@ -19,23 +19,20 @@ export default defineConfig({
     presetAttributify(),
     presetIcons({
       collections: {
-        mdi: () => import('@iconify-json/mdi').then(i => i.icons as any),
+        mdi: () => import('@iconify-json/mdi').then((i) => i.icons as any)
       },
       prefix: 'i-',
       extraProperties: {
         display: 'inline-block',
-        'vertical-align': 'middle',
+        'vertical-align': 'middle'
       }
     }),
     presetRemToPx(),
     presetTypography(),
     presetUno(),
     presetWebFonts({
-      fonts: {},
-    }),
+      fonts: {}
+    })
   ],
-  transformers: [
-    transformerDirectives(),
-    transformerVariantGroup(),
-  ],
-})
+  transformers: [transformerDirectives(), transformerVariantGroup()]
+});

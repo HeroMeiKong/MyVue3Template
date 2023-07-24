@@ -1,12 +1,12 @@
 import { createProdMockServer } from 'vite-plugin-mock/es/createProdMockServer';
 
-const modules: Record<string, any> = import.meta.glob("./apis/*.ts", {
-  import: "default",
-  eager: true,
+const modules: Record<string, any> = import.meta.glob('./apis/*.ts', {
+  import: 'default',
+  eager: true
 });
 
 const mockModules = Object.keys(modules).reduce((pre, key) => {
-  if (!key.includes("/_")) {
+  if (!key.includes('/_')) {
     pre.push(...modules[key]);
   }
   return pre;

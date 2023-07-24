@@ -1,6 +1,6 @@
 <template>
   <div>Redirect</div>
- </template>
+</template>
 <script lang="ts" setup>
   const { currentRoute, replace } = useRouter();
 
@@ -16,12 +16,12 @@
     replace({
       name: _path,
       query,
-      params,
+      params
     });
   } else {
     replace({
       path: _path.startsWith('/') ? _path : '/' + _path,
-      query,
+      query
     });
   }
 </script>

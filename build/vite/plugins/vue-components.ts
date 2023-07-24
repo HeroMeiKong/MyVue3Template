@@ -11,12 +11,12 @@ export default function setupVueComponents() {
     dts: 'types/components.d.ts',
     resolvers: [
       AntDesignVueResolver({
-        importStyle: false, // css in js
+        importStyle: false // css in js
       }),
       IconsResolver({
         customCollections: ['m-icons']
       }),
       VueUseComponentsResolver()
     ]
-  })
-};
+  });
+}

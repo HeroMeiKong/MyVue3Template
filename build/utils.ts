@@ -1,7 +1,3 @@
-import fs from 'fs';
-import path from 'path';
-import dotenv from 'dotenv';
-
 export function isDev(mode: string): boolean {
   return mode === 'development';
 }
@@ -24,7 +20,7 @@ export function wrapperEnv(envConf: Recordable): ViteEnv {
     if (envName === 'VITE_PROXY' && realName) {
       try {
         realName = JSON.parse(realName.replace(/'/g, '"'));
-      } catch(error) {
+      } catch (error) {
         realName = '';
       }
     }

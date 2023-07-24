@@ -9,16 +9,14 @@ import setupVueComponents from './vue-components';
 import type { PluginOption } from 'vite';
 
 export default function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean, pathTypes: string) {
+  console.log('pathTypes: ', pathTypes);
   const { VITE_USE_MOCK } = viteEnv;
 
-  const vitePlugins: (PluginOption | PluginOption[])[] = [
-    vue(),
-    vueJsx(),
-  ];
+  const vitePlugins: (PluginOption | PluginOption[])[] = [vue(), vueJsx()];
 
   // unplugin-auto-import
   vitePlugins.push(setupAutoImport());
-  
+
   // unplugin-icons
   vitePlugins.push(setupIcons());
 

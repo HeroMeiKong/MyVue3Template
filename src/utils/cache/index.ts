@@ -2,7 +2,7 @@ import { createStorage as create } from './storageCache';
 import { enableStorageEncryption, DEFAULT_CACHE_TIME } from '@/settings/encryptionSetting';
 import { getStorageShortName } from '@/utils/env';
 
-import type { CreateStorageParamsOptions as Options } from "#/utils";
+import type { CreateStorageParamsOptions as Options } from '#/utils';
 
 const createOptions = (storage: Storage, options: Options = {}): Options => {
   return {
@@ -10,7 +10,7 @@ const createOptions = (storage: Storage, options: Options = {}): Options => {
     hasEncrypt: enableStorageEncryption,
     storage,
     prefixKey: getStorageShortName(),
-    ...options,
+    ...options
   };
 };
 

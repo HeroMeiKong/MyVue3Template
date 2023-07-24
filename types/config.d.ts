@@ -2,7 +2,11 @@ import type { ThemeConfig } from 'ant-design-vue/es/config-provider/context';
 
 import { CacheTypeEnum } from '@/enums/cacheEnum';
 import { LangsEnum } from '@/enums/commonEnum';
-import { RouterTransitionEnum, SessionTimeoutProcessingEnum, ThemesEnum } from '@/enums/settingsEnum';
+import {
+  RouterTransitionEnum,
+  SessionTimeoutProcessingEnum,
+  ThemesEnum
+} from '@/enums/settingsEnum';
 
 export type LangType = `${LangsEnum}`;
 

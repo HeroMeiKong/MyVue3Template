@@ -26,7 +26,7 @@ export default defineConfig(({ command, mode }) => {
   const viteEnv = wrapperEnv(env);
 
   const { VITE_PORT, VITE_PROXY, VITE_DROP_CONSOLE } = viteEnv;
-  
+
   const isBuild = command === 'build';
 
   return {
@@ -43,7 +43,7 @@ export default defineConfig(({ command, mode }) => {
           // assetFileNames: `assets/[name].${timestamp}.[ext]`
           entryFileNames: `assets/[name].js`,
           chunkFileNames: `assets/[name].js`,
-          assetFileNames: `assets/[name].[ext]`,
+          assetFileNames: `assets/[name].[ext]`
         }
       }
     },
@@ -51,7 +51,7 @@ export default defineConfig(({ command, mode }) => {
       // setting vue-i18-next
       // Suppress warning
       __INTLIFY_PROD_DEVTOOLS__: false,
-      __APP_INFO__: JSON.stringify(__APP_INFO__),
+      __APP_INFO__: JSON.stringify(__APP_INFO__)
     },
     esbuild: {
       // pure: VITE_DROP_CONSOLE ? ['console.log', 'debugger'] : []
@@ -80,7 +80,7 @@ export default defineConfig(({ command, mode }) => {
       host: true,
       port: VITE_PORT,
       // Load Proxy configuration from .env
-      proxy: createProxy(VITE_PROXY),
+      proxy: createProxy(VITE_PROXY)
     }
-  }
-})
+  };
+});

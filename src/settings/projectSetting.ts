@@ -1,7 +1,11 @@
 import type { ProjectConfig } from '#/config';
 
 import { CacheTypeEnum } from '@/enums/cacheEnum';
-import { PermissionModeEnum, RouterTransitionEnum, SessionTimeoutProcessingEnum } from '@/enums/settingsEnum';
+import {
+  PermissionModeEnum,
+  RouterTransitionEnum,
+  SessionTimeoutProcessingEnum
+} from '@/enums/settingsEnum';
 
 // ! You need to clear the browser cache after the change
 const setting: ProjectConfig = {
@@ -30,10 +34,10 @@ const setting: ProjectConfig = {
     openPageLoading: true,
 
     // Whether to open the top progress bar
-    openNProgress: false,
+    openNProgress: false
   },
   // Use error-handler-plugin
-  useErrorHandle: false,
+  useErrorHandle: false
 };
 
 export default setting;

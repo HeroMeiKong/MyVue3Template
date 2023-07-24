@@ -5,7 +5,7 @@ import { t } from '@/hooks/web/useI18n';
 import { PAGE_NOT_FOUND_ROUTE, REDIRECT_ROUTE } from '@/router/routes/basic';
 
 // import.meta.glob() 直接引入所有的模块 Vite 独有的功能
-const modules: any = import.meta.glob('./modules/**/*.ts', { eager: true, import: 'default'});
+const modules: any = import.meta.glob('./modules/**/*.ts', { eager: true, import: 'default' });
 const routeModuleList: AppRouteModule[] = [];
 
 // 加入到路由集合中
@@ -24,8 +24,8 @@ export const RootRoute: AppRouteModule = {
   name: 'Root',
   redirect: PageEnum.BASE_HOME,
   meta: {
-    title: t('router.homepage'),
-  },
+    title: t('router.homepage')
+  }
 };
 
 export const LoginRoute: AppRouteModule = {
@@ -33,8 +33,8 @@ export const LoginRoute: AppRouteModule = {
   name: 'Login',
   component: () => import('@/pages/system/login/index.vue'),
   meta: {
-    title: t('word.login'),
-  },
+    title: t('word.login')
+  }
 };
 
 export const SignupRoute: AppRouteModule = {
@@ -42,8 +42,8 @@ export const SignupRoute: AppRouteModule = {
   name: 'Signup',
   component: () => import('@/pages/system/signup/index.vue'),
   meta: {
-    title: t('word.signup'),
-  },
+    title: t('word.signup')
+  }
 };
 
 // Basic routing without permission

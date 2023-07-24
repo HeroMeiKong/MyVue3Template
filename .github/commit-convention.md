@@ -84,7 +84,6 @@ This reverts commit 667ecc1654a317a13331b17617d973392f415f02.
 
 ### Footer
 
-The footer should contain any information about  and is also the place to reference GitHub issues that this commit **Closes**.
-页脚应包含有关 **Breaking Changes** 的任何信息，也是引用此提交 **Closes** for GitHub issues 的地方
+The footer should contain any information about and is also the place to reference GitHub issues that this commit **Closes**. 页脚应包含有关 **Breaking Changes** 的任何信息，也是引用此提交 **Closes** for GitHub issues 的地方
 
 **Breaking Changes** 应以 `BREAKING CHANGE:` 开头并带有空格或两个换行符，然后将提交消息的其余部分用于此

@@ -17,9 +17,9 @@ export function createFakeUserList() {
       roles: [
         {
           roleName: 'Super Admin',
-          value: 'super',
-        },
-      ],
+          value: 'super'
+        }
+      ]
     },
     {
       userId: '2',
@@ -33,17 +33,17 @@ export function createFakeUserList() {
       roles: [
         {
           roleName: 'Tester',
-          value: 'test',
-        },
-      ],
-    },
+          value: 'test'
+        }
+      ]
+    }
   ];
 }
 
 const fakeCodeList: any = {
   '1': ['1000', '3000', '5000'],
 
-  '2': ['2000', '4000', '6000'],
+  '2': ['2000', '4000', '6000']
 };
 export default [
   // mock user login
@@ -54,7 +54,7 @@ export default [
     response: ({ body }) => {
       const { username, password } = body;
       const checkUser = createFakeUserList().find(
-        (item) => item.username === username && password === item.password,
+        (item) => item.username === username && password === item.password
       );
       if (!checkUser) {
         return resultError('Incorrect account or password！');
@@ -66,9 +66,9 @@ export default [
         username: _username,
         token,
         realName,
-        desc,
+        desc
       });
-    },
+    }
   },
   {
     url: '/basic-api/getUserInfo',
@@ -81,7 +81,7 @@ export default [
         return resultError('The corresponding user information was not obtained!');
       }
       return resultSuccess(checkUser);
-    },
+    }
   },
   {
     url: '/basic-api/getPermCode',
@@ -97,7 +97,7 @@ export default [
       const codeList = fakeCodeList[checkUser.userId];
 
       return resultSuccess(codeList);
-    },
+    }
   },
   {
     url: '/basic-api/logout',
@@ -111,7 +111,7 @@ export default [
         return resultError('Invalid token!');
       }
       return resultSuccess(undefined, { message: 'Token has been destroyed' });
-    },
+    }
   },
   {
     url: '/basic-api/testRetry',
@@ -119,6 +119,6 @@ export default [
     method: 'get',
     response: () => {
       return resultError('Error!');
-    },
-  },
+    }
+  }
 ] as MockMethod[];

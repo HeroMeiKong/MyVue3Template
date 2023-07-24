@@ -41,7 +41,7 @@ function formatComponentName(vm: any) {
   if (vm.$root === vm) {
     return {
       name: 'root',
-      path: 'root',
+      path: 'root'
     };
   }
 
@@ -49,13 +49,13 @@ function formatComponentName(vm: any) {
   if (!options) {
     return {
       name: 'anonymous',
-      path: 'anonymous',
+      path: 'anonymous'
     };
   }
   const name = options.name || options._componentTag;
   return {
     name: name,
-    path: options.__file,
+    path: options.__file
   };
 }
 
@@ -63,7 +63,7 @@ function formatComponentName(vm: any) {
  * Configure Vue error handling function
  */
 
-function vueErrorHandler(err: Error, vm: any, info: string) {
+function vueErrorHandler(err: any, vm: any, info: string) {
   const errorLogStore = useErrorLogStoreWithOut();
   const { name, path } = formatComponentName(vm);
   errorLogStore.addErrorLogInfo({
@@ -73,7 +73,7 @@ function vueErrorHandler(err: Error, vm: any, info: string) {
     message: err.message,
     stack: processStackMsg(err),
     detail: info,
-    url: window.location.href,
+    url: window.location.href
   });
 }
 
@@ -85,7 +85,7 @@ export function scriptErrorHandler(
   source?: string,
   lineno?: number,
   colno?: number,
-  error?: Error,
+  error?: Error
 ) {
   if (event === 'Script error.' && !source) {
     return false;
@@ -106,7 +106,7 @@ export function scriptErrorHandler(
     file: source as string,
     detail: 'lineno' + lineno,
     url: window.location.href,
-    ...(errorInfo as Pick<ErrorLogInfo, 'message' | 'stack'>),
+    ...(errorInfo as Pick<ErrorLogInfo, 'message' | 'stack'>)
   });
   return true;
 }
@@ -126,10 +126,10 @@ function registerPromiseErrorHandler() {
         detail: 'promise error!',
         url: window.location.href,
         stack: 'promise error!',
-        message: event.reason,
+        message: event.reason
       });
     },
-    true,
+    true
   );
 }
 
@@ -150,14 +150,14 @@ function registerResourceErrorHandler() {
         detail: JSON.stringify({
           tagName: target.localName,
           html: target.outerHTML,
-          type: e.type,
+          type: e.type
         }),
         url: window.location.href,
         stack: 'resource is not found',
-        message: (e.target || ({} as any)).localName + ' is load error',
+        message: (e.target || ({} as any)).localName + ' is load error'
       });
     },
-    true,
+    true
   );
 }
 

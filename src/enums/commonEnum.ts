@@ -4,7 +4,7 @@ export enum ContentTypeEnum {
   // form-data  upload
   FORM_DATA = 'multipart/form-data;charset=UTF-8',
   // json
-  JSON = 'application/json;charset=UTF-8',
+  JSON = 'application/json;charset=UTF-8'
 }
 
 export enum LangsEnum {
@@ -29,7 +29,7 @@ export enum RequestEnum {
   DELETE = 'DELETE',
   GET = 'GET',
   POST = 'POST',
-  PUT = 'PUT',
+  PUT = 'PUT'
 }
 
 export enum RequestMessageModeEnum {
@@ -42,5 +42,5 @@ export enum ResultEnum {
   ERROR = -1,
   SUCCESS = 0,
   TIMEOUT = 401,
-  TYPE = 'success',
+  TYPE = 'success'
 }

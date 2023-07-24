@@ -19,8 +19,7 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
 
 ## 配置
 
-开发：`Vue3 + TypeScript + Vite + AntDesignVue + Pinia + Vue-Router`
-功能：
+开发：`Vue3 + TypeScript + Vite + AntDesignVue + Pinia + Vue-Router` 功能：
 
 - 增量打包 + 构建：[Turbo](https://github.com/vercel/turbo) 待完善
 - `UI`: [AntDesignVue](https://next.antdv.com/components/overview-cn) Done
@@ -28,8 +27,9 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
 - 国际化：[vue-i18n](https://github.com/kazupon/vue-i18n)：Done
 - `Vue3-JSX`：[@vitejs/plugin-vue-jsx](https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue-jsx) Done
 - 改进 `Git Hooks`：[husky](https://github.com/typicode/husky) In Progress
-- 提交规范：[`Commitizen`](https://github.com/commitizen/cz-cli) + [`CZ-Git`](https://github.com/Zhengqbbb/cz-git) In Progress
-  平时可多用 `cz-git` 的命令代替 `git commit`：`cz / git cz`
+- 代码美化：[`Prettier`](https://github.com/prettier/prettier) In Progress
+- `Lint`: [ESLint](https://github.com/eslint/eslint)、styleLint、commitLint In Progress
+- 提交规范：[`Commitizen`](https://github.com/commitizen/cz-cli) + [`CZ-Git`](https://github.com/Zhengqbbb/cz-git) Done平时可多用 `cz-git` 的命令代替 `git commit`：`cz / git cz`
 - 自动引入：`unplugin-auto-import`、`unplugin-icons`、`unplugin-vue-components` Done
 - 更好的使用 `CSS`：`Unocss` - [重新构想原子化 CSS](https://antfu.me/posts/reimagine-atomic-css-zh) Done
 - 更多的 `Icon`：`@iconify/json`（全量）、`@iconify-json/mdi（Material Design Icons）`等，[查询所有 Icon](https://icones.js.org/) Done
@@ -37,7 +37,7 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
 - `pinia`：Done
 - `Vue-Router`：Done
 - `Axios`: Done
-- `Lint`: 待完善
+- 图标功能：`ECharts` 待完善
 - 单元测试：待完善
 - 自动部署：待完善
 - 基础组件：待完善

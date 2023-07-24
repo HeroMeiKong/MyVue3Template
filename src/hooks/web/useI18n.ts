@@ -8,11 +8,11 @@ function getKey(namespace: string | undefined, key: string) {
   return `${namespace}.${key}`;
 }
 
-export function customUseI18n(namespace?: string): { t: I18nGlobalTranslation; } {
+export function customUseI18n(namespace?: string): { t: I18nGlobalTranslation } {
   const normalFn = {
     t: (key: string) => {
       return getKey(namespace, key);
-    },
+    }
   };
 
   if (!i18n) return normalFn;
@@ -26,7 +26,7 @@ export function customUseI18n(namespace?: string): { t: I18nGlobalTranslation; }
   };
   return {
     ...methods,
-    t: tFn,
+    t: tFn
   };
 }
 

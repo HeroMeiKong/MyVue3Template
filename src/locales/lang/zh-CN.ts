@@ -4,7 +4,7 @@ const dict = {
   common: {
     networkException: '网络异常',
     networkExceptionMsg: '网络异常，请检查您的网络连接是否正常!',
-    week: ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期天'],
+    week: ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期天']
   },
   condition: {},
   operation: {},
@@ -14,16 +14,16 @@ const dict = {
     operationSuccess: '操作成功',
     operationFailed: '操作失败',
     processing: '处理中',
-    uploadFail: '上传失败',
+    uploadFail: '上传失败'
   },
   tip: {
     confirmExitSystem: '是否确认退出系统?',
     errorTip: '错误提示',
-    successTip: '成功提示',
+    successTip: '成功提示'
   },
   // 独特的，中英差别，例如复数
   unique: {
-    tips: '温馨提醒',
+    tips: '温馨提醒'
   },
   // 单位，简写，完整的请在 word 添加
   unit: {
@@ -33,12 +33,12 @@ const dict = {
     month: '月',
     second: '秒',
     weekday: '工作日',
-    year: '年',
+    year: '年'
   },
   validate: {
     passwordEmpty: '请输入原始密码',
     newPasswordEmpty: '请输入新密码',
-    reNewPasswordEmpty: '请再次输入新密码',
+    reNewPasswordEmpty: '请再次输入新密码'
   },
   // 单词，无复数，全写
   word: {
@@ -102,8 +102,8 @@ const dict = {
     value: '值',
     week: '周',
     year: '年',
-    yes: '是',
-  },
+    yes: '是'
+  }
 };
 
 export default {
@@ -122,7 +122,7 @@ export default {
       errMsg503: '服务不可用，服务器暂时过载或维护!',
       errMsg504: '网络超时!',
       errMsg505: 'http版本不支持该请求!',
-      timeoutMessage: '登录超时,请重新登录!',
+      timeoutMessage: '登录超时,请重新登录!'
     },
     router: {
       errorLog: '错误日志',
@@ -130,9 +130,9 @@ export default {
       errorPage: '错误页面',
       homepage: '主页',
       level: '会员等级',
-      login: dict.word.login,
-    }, 
+      login: dict.word.login
+    },
     ...dict,
     antdLocale
   }
-}
+};

@@ -46,9 +46,9 @@ module.exports = {
         'wip',
         'workflow',
         'types',
-        'release',
-      ],
-    ],
+        'release'
+      ]
+    ]
   },
   prompt: {
     /** @use `yarn commit :f` */
@@ -57,7 +57,7 @@ module.exports = {
       r: 'docs: update README',
       s: 'style: update code format',
       b: 'build: bump dependencies',
-      c: 'chore: update config',
+      c: 'chore: update config'
     },
     customScopesAlign: !scopeComplete ? 'top' : 'bottom',
     defaultScope: scopeComplete,
@@ -69,7 +69,7 @@ module.exports = {
     typesAppend: [
       { value: 'wip', name: 'wip:      work in process' },
       { value: 'workflow', name: 'workflow: workflow improvements' },
-      { value: 'types', name: 'types:    type definition file changes' },
+      { value: 'types', name: 'types:    type definition file changes' }
     ],
 
     // 中英文对照版
@@ -83,7 +83,7 @@ module.exports = {
       footerPrefixsSelect: '选择关联issue前缀 (可选):',
       customFooterPrefixs: '输入自定义issue前缀 :',
       footer: '列举关联issue (可选) 例如: #31, #I3244 :\n',
-      confirmCommit: '是否提交或修改commit ?',
+      confirmCommit: '是否提交或修改commit ?'
     },
     types: [
       { value: 'feat', name: 'feat:     新增功能' },
@@ -99,9 +99,9 @@ module.exports = {
       { value: 'chore', name: 'chore:    对构建过程或辅助工具和库的更改 (不影响源文件、测试用例)' },
       { value: 'wip', name: 'wip:      正在开发中' },
       { value: 'workflow', name: 'workflow: 工作流程改进' },
-      { value: 'types', name: 'types:    类型定义文件修改' },
+      { value: 'types', name: 'types:    类型定义文件修改' }
     ],
     emptyScopesAlias: 'empty:      不填写',
-    customScopesAlias: 'custom:     自定义',
-  },
+    customScopesAlias: 'custom:     自定义'
+  }
 };

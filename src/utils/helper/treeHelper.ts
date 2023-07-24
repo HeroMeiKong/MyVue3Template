@@ -4,7 +4,7 @@ import type { TreeHelperConfig } from '#/utils';
 const DEFAULT_CONFIG: TreeHelperConfig = {
   id: 'id',
   children: 'children',
-  pid: 'pid',
+  pid: 'pid'
 };
 
 // 获取配置。  Object.assign 从一个或多个源对象复制到目标对象
@@ -43,7 +43,7 @@ export function treeToList<T = any>(tree: any, config: Partial<TreeHelperConfig>
 export function findNode<T = any>(
   tree: any,
   func: Fn,
-  config: Partial<TreeHelperConfig> = {},
+  config: Partial<TreeHelperConfig> = {}
 ): T | null {
   config = getConfig(config);
   const { children } = config;
@@ -58,7 +58,7 @@ export function findNode<T = any>(
 export function findNodeAll<T = any>(
   tree: any,
   func: Fn,
-  config: Partial<TreeHelperConfig> = {},
+  config: Partial<TreeHelperConfig> = {}
 ): T[] {
   config = getConfig(config);
   const { children } = config;
@@ -74,7 +74,7 @@ export function findNodeAll<T = any>(
 export function findPath<T = any>(
   tree: any,
   func: Fn,
-  config: Partial<TreeHelperConfig> = {},
+  config: Partial<TreeHelperConfig> = {}
 ): T | T[] | null {
   config = getConfig(config);
   const path: T[] = [];
@@ -124,7 +124,7 @@ export function filter<T = any>(
   tree: T[],
   func: (n: T) => boolean,
   // Partial 将 T 中的所有属性设为可选
-  config: Partial<TreeHelperConfig> = {},
+  config: Partial<TreeHelperConfig> = {}
 ): T[] {
   // 获取配置
   config = getConfig(config);
@@ -147,7 +147,7 @@ export function filter<T = any>(
 export function forEach<T = any>(
   tree: T[],
   func: (n: T) => any,
-  config: Partial<TreeHelperConfig> = {},
+  config: Partial<TreeHelperConfig> = {}
 ): void {
   config = getConfig(config);
   const list: any[] = [...tree];
@@ -175,7 +175,7 @@ export function treeMap<T = any>(treeData: T[], opt: { children?: string; conver
  */
 export function treeMapEach(
   data: any,
-  { children = 'children', conversion }: { children?: string; conversion: Fn },
+  { children = 'children', conversion }: { children?: string; conversion: Fn }
 ) {
   const haveChildren = Array.isArray(data[children]) && data[children].length > 0;
   const conversionData = conversion(data) || {};
@@ -185,13 +185,13 @@ export function treeMapEach(
       [children]: data[children].map((i: number) =>
         treeMapEach(i, {
           children,
-          conversion,
-        }),
-      ),
+          conversion
+        })
+      )
     };
   } else {
     return {
-      ...conversionData,
+      ...conversionData
     };
   }
 }

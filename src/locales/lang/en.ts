@@ -3,8 +3,9 @@ import antdLocale from 'ant-design-vue/es/locale/en_US';
 const dict = {
   common: {
     networkException: 'network anomaly',
-    networkExceptionMsg: 'Please check if your network connection is normal! The network is abnormal',
-    week: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+    networkExceptionMsg:
+      'Please check if your network connection is normal! The network is abnormal',
+    week: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
   },
   condition: {},
   operation: {},
@@ -14,16 +15,16 @@ const dict = {
     operationSuccess: 'Operation Success',
     operationFailed: 'Operation Failed',
     processing: 'Processing',
-    uploadFail: 'Upload Failed',
+    uploadFail: 'Upload Failed'
   },
   tip: {
     confirmExitSystem: 'Are you sure to exit the system?',
     errorTip: 'Error Tip',
-    successTip: 'Success Tip',
+    successTip: 'Success Tip'
   },
   // 独特的，中英差别，例如复数
   unique: {
-    tips: 'Tips',
+    tips: 'Tips'
   },
   // 单位，简写，完整的请在 word 添加
   unit: {
@@ -33,12 +34,12 @@ const dict = {
     month: 'M',
     second: 's',
     weekday: 'Weekday',
-    year: 'Y',
+    year: 'Y'
   },
   validate: {
     passwordEmpty: 'Please enter the original password',
     newPasswordEmpty: 'Please enter a new password',
-    reNewPasswordEmpty: 'Please enter new password again',
+    reNewPasswordEmpty: 'Please enter new password again'
   },
   // 单词，无复数
   word: {
@@ -102,8 +103,8 @@ const dict = {
     value: 'Value',
     week: 'Week',
     year: 'Year',
-    yes: 'YES',
-  },
+    yes: 'YES'
+  }
 };
 
 export default {
@@ -122,7 +123,7 @@ export default {
       errMsg503: 'The service is unavailable, the server is temporarily overloaded or maintained!',
       errMsg504: 'Network timeout!',
       errMsg505: 'The http version does not support the request!',
-      timeoutMessage: 'Login timed out, please log in again!',
+      timeoutMessage: 'Login timed out, please log in again!'
     },
     router: {
       errorLog: 'Error Log',
@@ -130,9 +131,9 @@ export default {
       errorPage: 'Error Page',
       homepage: 'Homepage',
       level: 'Membership Level',
-      login: dict.word.login,
-    }, 
+      login: dict.word.login
+    },
     ...dict,
     antdLocale
   }
-}
+};

@@ -28,16 +28,16 @@ export class AesEncryption {
     return {
       mode: ECB,
       padding: pkcs7,
-      iv: this.iv,
+      iv: this.iv
     };
   }
 
   encryptByAES(cipherText: string) {
-    return encrypt(cipherText, this.key, this.getOptions).toString();
+    return encrypt(cipherText, this.key ?? '', this.getOptions).toString();
   }
 
   decryptByAES(cipherText: string) {
-    return decrypt(cipherText, this.key, this.getOptions).toString(UTF8);
+    return decrypt(cipherText, this.key ?? '', this.getOptions).toString(UTF8);
   }
 }
 

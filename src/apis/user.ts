@@ -6,21 +6,27 @@ import { RequestMessageModeEnum } from '@/enums/commonEnum';
 import { defHttp } from '@/utils/axios';
 
 export function getUserInfo() {
-  return defHttp.get<GetUserInfoModel>({ url: UserApiEnum.GetUserInfo }, { errorMessageMode: RequestMessageModeEnum.NONE });
+  return defHttp.get<GetUserInfoModel>(
+    { url: UserApiEnum.GetUserInfo },
+    { errorMessageMode: RequestMessageModeEnum.NONE }
+  );
 }
 
 /**
  * @description: user login api
  */
-export function loginApi(params: LoginParams, mode: RequestMessageMode = RequestMessageModeEnum.MODAL) {
+export function loginApi(
+  params: LoginParams,
+  mode: RequestMessageMode = RequestMessageModeEnum.MODAL
+) {
   return defHttp.post<LoginResultModel>(
     {
       url: UserApiEnum.Login,
-      params,
+      params
     },
     {
-      errorMessageMode: mode,
-    },
+      errorMessageMode: mode
+    }
   );
 }
 

@@ -3,7 +3,11 @@ import type { ThemesType, ADVSettings } from '#/config';
 
 import { ThemesEnum } from '@/enums/settingsEnum';
 import { store } from '@/store';
-import updateTheme, { getLocalCustomTheme, getLocalTheme, setLocalCustomTheme } from '@/logics/theme';
+import updateTheme, {
+  getLocalCustomTheme,
+  getLocalTheme,
+  setLocalCustomTheme
+} from '@/logics/theme';
 import { themeSetting } from '@/settings/themeSetting';
 
 export const useSettingStore = defineStore({
@@ -11,7 +15,7 @@ export const useSettingStore = defineStore({
   state: (): ADVSettings => ({
     customTheme: themeSetting[ThemesEnum.CUSTOM],
     theme: themeSetting[ThemesEnum.LIGHT],
-    themeName: ThemesEnum.LIGHT,
+    themeName: ThemesEnum.LIGHT
   }),
   getters: {
     getCustomTheme(state): ThemeConfig {
@@ -43,9 +47,9 @@ export const useSettingStore = defineStore({
 
       const theme = await getLocalTheme();
       this.setTheme(theme ?? themeSetting[ThemesEnum.LIGHT]);
-    },
+    }
   },
-  persist: true,
+  persist: true
 });
 
 export function useSettingStoreWithOut() {

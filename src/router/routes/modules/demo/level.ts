@@ -12,7 +12,7 @@ const permission: AppRouteModule = {
   redirect: '/level/',
   meta: {
     icon: 'ion:menu-outline',
-    title: t('router.level'),
+    title: t('router.level')
   },
   children: []
 };
