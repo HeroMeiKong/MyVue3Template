@@ -26,9 +26,9 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
 - 模拟数据：[MockJS](http://mockjs.com/) Done
 - 国际化：[vue-i18n](https://github.com/kazupon/vue-i18n)：Done
 - `Vue3-JSX`：[@vitejs/plugin-vue-jsx](https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue-jsx) Done
-- 改进 `Git Hooks`：[husky](https://github.com/typicode/husky) In Progress
-- 代码美化：[`Prettier`](https://github.com/prettier/prettier) In Progress
-- `Lint`: [ESLint](https://github.com/eslint/eslint)、styleLint、commitLint In Progress
+- 改进 `Git Hooks`：[husky](https://github.com/typicode/husky) Done
+- 代码美化：[`Prettier`](https://github.com/prettier/prettier) Done
+- `Lint`: [ESLint](https://github.com/eslint/eslint)、styleLint、commitLint Done
 - 提交规范：[`Commitizen`](https://github.com/commitizen/cz-cli) + [`CZ-Git`](https://github.com/Zhengqbbb/cz-git) Done平时可多用 `cz-git` 的命令代替 `git commit`：`cz / git cz`
 - 自动引入：`unplugin-auto-import`、`unplugin-icons`、`unplugin-vue-components` Done
 - 更好的使用 `CSS`：`Unocss` - [重新构想原子化 CSS](https://antfu.me/posts/reimagine-atomic-css-zh) Done
@@ -37,9 +37,9 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
 - `pinia`：Done
 - `Vue-Router`：Done
 - `Axios`: Done
-- 图标功能：`ECharts` 待完善
+- 可视化图表功能：`ECharts` 待完善
 - 单元测试：待完善
-- 自动部署：待完善
+- 自动部署：In Progress
 - 基础组件：待完善
 - 加解密：Done
 - i18n-ally 兼容：待完善
