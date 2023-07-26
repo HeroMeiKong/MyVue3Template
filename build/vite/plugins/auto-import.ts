@@ -7,7 +7,7 @@ export default function setupAutoImport() {
     // Generate corresponding .eslintrc-auto-import.json file.
     // eslint globals Docs - https://eslint.org/docs/user-guide/configuring/language-options#specifying-globals
     eslintrc: {
-      enabled: true, // Default `false`
+      enabled: false, // 找不到引入的时候改为 true，成功后改为 false，不用一直 true 消耗性能
       filepath: './.eslintrc-auto-import.json', // Default `./.eslintrc-auto-import.json`
       globalsPropValue: true // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
     },

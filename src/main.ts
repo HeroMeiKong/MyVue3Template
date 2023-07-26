@@ -6,7 +6,8 @@ import { router, setupRouter } from '@/router';
 import { setupRouterGuard } from '@/router/guard';
 import { setupStore } from '@/store';
 
-import './global.css';
+import '@/design/custom.css';
+import '@/design/global.css';
 import '@unocss/reset/normalize.css';
 import 'uno.css';
 

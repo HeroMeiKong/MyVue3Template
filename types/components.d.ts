@@ -9,11 +9,16 @@ declare module 'vue' {
   export interface GlobalComponents {
     AButton: typeof import('ant-design-vue/es')['Button'];
     AConfigProvider: typeof import('ant-design-vue/es')['ConfigProvider'];
+    ADropdown: typeof import('ant-design-vue/es')['Dropdown'];
+    AMenu: typeof import('ant-design-vue/es')['Menu'];
+    AMenuItem: typeof import('ant-design-vue/es')['MenuItem'];
     APagination: typeof import('ant-design-vue/es')['Pagination'];
     ATimeRangePicker: typeof import('ant-design-vue/es')['TimeRangePicker'];
     Default: typeof import('./../src/components/layouts/default/index.vue')['default'];
     Examples: typeof import('./../src/components/Examples.vue')['default'];
+    Langs: typeof import('./../src/components/basic/Langs.vue')['default'];
     RouterLink: typeof import('vue-router')['RouterLink'];
     RouterView: typeof import('vue-router')['RouterView'];
+    Theme: typeof import('./../src/components/basic/Theme.vue')['default'];
   }
 }

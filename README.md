@@ -1,23 +1,4 @@
-# Vue 3 + TypeScript + Vite
-
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Type Support For `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## 配置
+# 配置
 
 开发：`Vue3 + TypeScript + Vite + AntDesignVue + Pinia + Vue-Router` 功能：
 
@@ -29,7 +10,8 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
 - 改进 `Git Hooks`：[husky](https://github.com/typicode/husky) Done
 - 代码美化：[`Prettier`](https://github.com/prettier/prettier) Done
 - `Lint`: [ESLint](https://github.com/eslint/eslint)、styleLint、commitLint Done
-- 提交规范：[`Commitizen`](https://github.com/commitizen/cz-cli) + [`CZ-Git`](https://github.com/Zhengqbbb/cz-git) Done平时可多用 `cz-git` 的命令代替 `git commit`：`cz / git cz`
+- 提交规范：[`Commitizen`](https://github.com/commitizen/cz-cli) + [`CZ-Git`](https://github.com/Zhengqbbb/cz-git) Done
+  - 平时可多用 `cz-git` 的命令代替 `git commit`：`cz / git cz`
 - 自动引入：`unplugin-auto-import`、`unplugin-icons`、`unplugin-vue-components` Done
 - 更好的使用 `CSS`：`Unocss` - [重新构想原子化 CSS](https://antfu.me/posts/reimagine-atomic-css-zh) Done
 - 更多的 `Icon`：`@iconify/json`（全量）、`@iconify-json/mdi（Material Design Icons）`等，[查询所有 Icon](https://icones.js.org/) Done
@@ -37,12 +19,38 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
 - `pinia`：Done
 - `Vue-Router`：Done
 - `Axios`: Done
-- 可视化图表功能：`ECharts` 待完善
 - 单元测试：待完善
-- 自动部署：In Progress
+- 自动部署：Done
 - 基础组件：待完善
 - 加解密：Done
 - i18n-ally 兼容：待完善
+- 其他功能
+  - `lodash`：[`lodash-es`](https://github.com/lodash/lodash) Done
+  - `Pinia` 持久化存储：[`pinia-plugin-persistedstate`](https://github.com/prazdevs/pinia-plugin-persistedstate) Done
+  - 可视化图表功能：`ECharts` 待完善
+  - `Swiper`：[`Swiper`](https://github.com/nolimits4web/swiper/tree/master) 待完善
+  - `Float`：[`Floating-ui`](https://github.com/floating-ui/floating-ui) 待完善
+  - `Mars3D`：[`Mars3D`](https://github.com/marsgis/mars3d)(其它方案？) 待完善
+  - `PDF`：[`PDFjs`](https://github.com/mozilla/pdf.js)、[`jsPDF`](https://github.com/parallax/jsPDF) 待完善
+  - `Console`：[`Xtermjs`](https://github.com/xtermjs/xterm.js) 待完善
+  - 图片压缩：[`Squoosh`](https://github.com/GoogleChromeLabs/squoosh) 待完善
+  - 剪贴板：[`clipboard.js`](https://github.com/zenorocha/clipboard.js)
+  - 滚动效果：[`FullPagejs`](https://github.com/alvarotrigo/fullPage.js)、[`GSAP`](https://github.com/greensock/GSAP)、[`scrollreveal`](https://github.com/jlmakes/scrollreveal) 待完善
+  - 本地存储：[`localForage`](https://github.com/localForage/localForage)(替代方案？) 待完善
+  - 数据可视化：[`d3`](https://github.com/d3/d3)(替代方案？) 待完善
+  - `3D`：[`threejs`](https://github.com/mrdoob/three.js)、[`pixijs`](https://github.com/pixijs/pixijs) 待完善
+  - 拖动：[`draggable`](https://github.com/Shopify/draggable) 待完善
+  - 浏览器兼容：[`polyfill-service`](https://github.com/Financial-Times/polyfill-service) 待完善
+  - 照片墙：[`PhotoSwipe`](https://github.com/dimsemenov/PhotoSwipe) 待完善
+  - 小文件上传：[`filepond`](https://github.com/pqina/filepond) 待完善
+  - 大文件分片上传：[`webuploader`](http://fex.baidu.com/webuploader/)(替代方案？) 待完善
+  - 动画/动态效果：[`animate.css`](https://github.com/animate-css/animate.css)、[`anime`](https://github.com/juliangarnier/anime)、[`tweenjs`](https://github.com/tweenjs/tween.js)、[`motionone`](https://github.com/motiondivision/motionone) 待完善
+  - 下载：[`html2canvas`](https://github.com/niklasvh/html2canvas) 待完善
+  - 新手导航：[`intro.js`](https://github.com/usablica/intro.js) 待完善
+  - `Lottie`：[`lottie-player`](https://github.com/LottieFiles/lottie-player)、[`lottie-web`](https://github.com/airbnb/lottie-web) 待完善
+  - 照片处理：[`AlloyImage`](https://github.com/AlloyTeam/AlloyImage) 待完善
+  - 视频播放：[`flv.js`](https://github.com/bilibili/flv.js)(替代方案？) 待完善
+  - `SVG/Canvas`：[`Fabric.js`](https://github.com/fabricjs/fabric.js) 待完善
 
 结构：
 
